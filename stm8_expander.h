@@ -34,6 +34,7 @@ typedef struct{
     mrt_reg_t mAdc2Val;              //Output of ADC 2
     mrt_reg_t mAdc3Val;              //Output of ADC 3
     mrt_reg_t mAdc4Val;              //Output of ADC 4
+    mrt_reg_t mIrqSrc;               //latching Interrupt source mask
     mrt_reg_t mGpio0Cfg;             //Configuration for GPIO 0
     mrt_reg_t mGpio1Cfg;             //Configuration for GPIO 1
     mrt_reg_t mGpio2Cfg;             //Configuration for GPIO 2
@@ -52,6 +53,7 @@ typedef struct{
     mrt_reg_t mAdc3Cfg;              //Configuration for ADC 3
     mrt_reg_t mAdc4Cfg;              //Configuration for ADC 4
     mrt_reg_t mPwmConfig;            //Configuration for PWM
+    mrt_reg_t mWhoAmI;               //Device ID
     mrt_reg_t mEepromMem;            //Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address
 /*user-block-struct-start*/
 /*user-block-struct-end*/

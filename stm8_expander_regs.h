@@ -21,24 +21,26 @@
 #define IO_REG_ADC_2_VAL_ADDR                                      0x0A /* Output of ADC 2 */
 #define IO_REG_ADC_3_VAL_ADDR                                      0x0C /* Output of ADC 3 */
 #define IO_REG_ADC_4_VAL_ADDR                                      0x0E /* Output of ADC 4 */
-#define IO_REG_GPIO_0_CFG_ADDR                                     0x10 /* Configuration for GPIO 0 */
-#define IO_REG_GPIO_1_CFG_ADDR                                     0x11 /* Configuration for GPIO 1 */
-#define IO_REG_GPIO_2_CFG_ADDR                                     0x12 /* Configuration for GPIO 2 */
-#define IO_REG_GPIO_3_CFG_ADDR                                     0x13 /* Configuration for GPIO 3 */
-#define IO_REG_GPIO_4_CFG_ADDR                                     0x14 /* Configuration for GPIO 4 */
-#define IO_REG_GPIO_5_CFG_ADDR                                     0x15 /* Configuration for GPIO 5 */
-#define IO_REG_GPIO_6_CFG_ADDR                                     0x16 /* Configuration for GPIO 6 */
-#define IO_REG_GPIO_7_CFG_ADDR                                     0x17 /* Configuration for GPIO 7 */
-#define IO_REG_GPIO_8_CFG_ADDR                                     0x18 /* Configuration for GPIO 8 */
-#define IO_REG_GPIO_9_CFG_ADDR                                     0x19 /* Configuration for GPIO 9 */
-#define IO_REG_GPIO_10_CFG_ADDR                                    0x1A /* Configuration for GPIO 10 */
-#define IO_REG_GPIO_11_CFG_ADDR                                    0x1B /* Configuration for GPIO 11 */
-#define IO_REG_ADC_0_CFG_ADDR                                      0x20 /* Configuration for ADC 0 */
-#define IO_REG_ADC_1_CFG_ADDR                                      0x22 /* Configuration for ADC 1 */
-#define IO_REG_ADC_2_CFG_ADDR                                      0x24 /* Configuration for ADC 2 */
-#define IO_REG_ADC_3_CFG_ADDR                                      0x26 /* Configuration for ADC 3 */
-#define IO_REG_ADC_4_CFG_ADDR                                      0x28 /* Configuration for ADC 4 */
-#define IO_REG_PWM_CONFIG_ADDR                                     0x30 /* Configuration for PWM */
+#define IO_REG_IRQ_SRC_ADDR                                        0x10 /* latching Interrupt source mask */
+#define IO_REG_GPIO_0_CFG_ADDR                                     0x20 /* Configuration for GPIO 0 */
+#define IO_REG_GPIO_1_CFG_ADDR                                     0x21 /* Configuration for GPIO 1 */
+#define IO_REG_GPIO_2_CFG_ADDR                                     0x22 /* Configuration for GPIO 2 */
+#define IO_REG_GPIO_3_CFG_ADDR                                     0x23 /* Configuration for GPIO 3 */
+#define IO_REG_GPIO_4_CFG_ADDR                                     0x24 /* Configuration for GPIO 4 */
+#define IO_REG_GPIO_5_CFG_ADDR                                     0x25 /* Configuration for GPIO 5 */
+#define IO_REG_GPIO_6_CFG_ADDR                                     0x26 /* Configuration for GPIO 6 */
+#define IO_REG_GPIO_7_CFG_ADDR                                     0x27 /* Configuration for GPIO 7 */
+#define IO_REG_GPIO_8_CFG_ADDR                                     0x28 /* Configuration for GPIO 8 */
+#define IO_REG_GPIO_9_CFG_ADDR                                     0x29 /* Configuration for GPIO 9 */
+#define IO_REG_GPIO_10_CFG_ADDR                                    0x2A /* Configuration for GPIO 10 */
+#define IO_REG_GPIO_11_CFG_ADDR                                    0x2B /* Configuration for GPIO 11 */
+#define IO_REG_ADC_0_CFG_ADDR                                      0x30 /* Configuration for ADC 0 */
+#define IO_REG_ADC_1_CFG_ADDR                                      0x32 /* Configuration for ADC 1 */
+#define IO_REG_ADC_2_CFG_ADDR                                      0x34 /* Configuration for ADC 2 */
+#define IO_REG_ADC_3_CFG_ADDR                                      0x36 /* Configuration for ADC 3 */
+#define IO_REG_ADC_4_CFG_ADDR                                      0x38 /* Configuration for ADC 4 */
+#define IO_REG_PWM_CONFIG_ADDR                                     0x40 /* Configuration for PWM */
+#define IO_REG_WHO_AM_I_ADDR                                       0x60 /* Device ID */
 #define IO_REG_EEPROM_MEM_ADDR                                     0x7F /* Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address */
 
 
@@ -55,6 +57,36 @@
     /* GPIO_OUT -> GPIO_OUT */
     #define IO_GPIO_OUT_GPIO_OUT_FIELD_MASK                        0xFFFF /* Output values for gpio 0-15 */
     #define IO_GPIO_OUT_GPIO_OUT_FIELD_OFFSET                      0x0000
+
+/* ADC_0_VAL Register Fields */
+    /* ADC_0_VAL -> ADC_0_VAL */
+    #define IO_ADC_0_VAL_ADC_0_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 0 */
+    #define IO_ADC_0_VAL_ADC_0_VAL_FIELD_OFFSET                    0x0000
+
+/* ADC_1_VAL Register Fields */
+    /* ADC_1_VAL -> ADC_1_VAL */
+    #define IO_ADC_1_VAL_ADC_1_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 1 */
+    #define IO_ADC_1_VAL_ADC_1_VAL_FIELD_OFFSET                    0x0000
+
+/* ADC_2_VAL Register Fields */
+    /* ADC_2_VAL -> ADC_2_VAL */
+    #define IO_ADC_2_VAL_ADC_2_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 2 */
+    #define IO_ADC_2_VAL_ADC_2_VAL_FIELD_OFFSET                    0x0000
+
+/* ADC_3_VAL Register Fields */
+    /* ADC_3_VAL -> ADC_3_VAL */
+    #define IO_ADC_3_VAL_ADC_3_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 3 */
+    #define IO_ADC_3_VAL_ADC_3_VAL_FIELD_OFFSET                    0x0000
+
+/* ADC_4_VAL Register Fields */
+    /* ADC_4_VAL -> ADC_4_VAL */
+    #define IO_ADC_4_VAL_ADC_4_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 4 */
+    #define IO_ADC_4_VAL_ADC_4_VAL_FIELD_OFFSET                    0x0000
+
+/* IRQ_SRC Register Fields */
+    /* IRQ_SRC -> IRQ_SRC */
+    #define IO_IRQ_SRC_IRQ_SRC_FIELD_MASK                          0xFFFF /* latching Interrupt source mask */
+    #define IO_IRQ_SRC_IRQ_SRC_FIELD_OFFSET                        0x0000
 
 /* GPIO_0_CFG Register Fields */
     /* GPIO_0_CFG -> Flags */
@@ -327,11 +359,17 @@
       #define IO_PWM_CONFIG_PRESCALER_PRESCALER_16384              0x0000000E /* divide clock by 16384 () */
       #define IO_PWM_CONFIG_PRESCALER_PRESCALER_32768              0x0000000F /* divide clock by 32768 () */
 
+/* WHO_AM_I Register Fields */
+    /* WHO_AM_I -> WHO_AM_I */
+    #define IO_WHO_AM_I_WHO_AM_I_FIELD_MASK                        0xFF /* Device ID */
+    #define IO_WHO_AM_I_WHO_AM_I_FIELD_OFFSET                      0x00
+
 
 /*******************************************************************************
   Default Values                                                                              
 *******************************************************************************/
 
+#define IO_WHO_AM_I_DEFAULT                                        0xAB
 
 /*******************************************************************************
   Flag Set/Clear/Check                                                                             
@@ -377,6 +415,36 @@
  * @param dev ptr to stm8_expander device
  */
 #define io_get_gpio_out(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpioOut, IO_GPIO_OUT_GPIO_OUT_FIELD_MASK )
+/**
+ * @brief reads the ADC_0_VAL field from the ADC_0_VAL register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_adc_0_val(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc0Val, IO_ADC_0_VAL_ADC_0_VAL_FIELD_MASK )
+/**
+ * @brief reads the ADC_1_VAL field from the ADC_1_VAL register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_adc_1_val(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc1Val, IO_ADC_1_VAL_ADC_1_VAL_FIELD_MASK )
+/**
+ * @brief reads the ADC_2_VAL field from the ADC_2_VAL register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_adc_2_val(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc2Val, IO_ADC_2_VAL_ADC_2_VAL_FIELD_MASK )
+/**
+ * @brief reads the ADC_3_VAL field from the ADC_3_VAL register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_adc_3_val(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc3Val, IO_ADC_3_VAL_ADC_3_VAL_FIELD_MASK )
+/**
+ * @brief reads the ADC_4_VAL field from the ADC_4_VAL register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_adc_4_val(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc4Val, IO_ADC_4_VAL_ADC_4_VAL_FIELD_MASK )
+/**
+ * @brief reads the IRQ_SRC field from the IRQ_SRC register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_irq_src(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mIrqSrc, IO_IRQ_SRC_IRQ_SRC_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_0_CFG register 
  * @param dev ptr to stm8_expander device
@@ -581,6 +649,11 @@
  * @return IO_PWM_CONFIG_PRESCALER_PRESCALER_32768 divide clock by 32768 ()
  */
 #define io_get_pwm_config_prescaler(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mPwmConfig, IO_PWM_CONFIG_PRESCALER_FIELD_MASK )
+/**
+ * @brief reads the WHO_AM_I field from the WHO_AM_I register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_get_who_am_i(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mWhoAmI, IO_WHO_AM_I_WHO_AM_I_FIELD_MASK )
 
 
 /*******************************************************************************
@@ -796,6 +869,11 @@
  * @option IO_PWM_CONFIG_PRESCALER_PRESCALER_32768 divide clock by 32768 ()
  */
 #define io_set_pwm_config_prescaler(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mPwmConfig, IO_PWM_CONFIG_PRESCALER_FIELD_MASK , (val) )
+/**
+ * @brief writes the WHO_AM_I field to the WHO_AM_I register 
+ * @param dev ptr to stm8_expander device
+ */
+#define io_set_who_am_i(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mWhoAmI, IO_WHO_AM_I_WHO_AM_I_FIELD_MASK , (val) )
 
 /*******************************************************************************
   Configs                                                                            

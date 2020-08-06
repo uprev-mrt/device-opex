@@ -25,6 +25,7 @@ static mrt_status_t io_init(stm8_expander_t* dev)
     REG_INIT( dev->mAdc2Val , IO_REG_ADC_2_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mAdc3Val , IO_REG_ADC_3_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mAdc4Val , IO_REG_ADC_4_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
+    REG_INIT( dev->mIrqSrc , IO_REG_IRQ_SRC_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mGpio0Cfg , IO_REG_GPIO_0_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio1Cfg , IO_REG_GPIO_1_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio2Cfg , IO_REG_GPIO_2_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
@@ -43,6 +44,7 @@ static mrt_status_t io_init(stm8_expander_t* dev)
     REG_INIT( dev->mAdc3Cfg , IO_REG_ADC_3_CFG_ADDR , uint16_t, REG_PERM_RW , 0x0000  );
     REG_INIT( dev->mAdc4Cfg , IO_REG_ADC_4_CFG_ADDR , uint16_t, REG_PERM_RW , 0x0000  );
     REG_INIT( dev->mPwmConfig , IO_REG_PWM_CONFIG_ADDR , uint32_t, REG_PERM_RW , 0x00000000  );
+    REG_INIT( dev->mWhoAmI , IO_REG_WHO_AM_I_ADDR , uint8_t, REG_PERM_RW , 0xAB  );
     REG_INIT( dev->mEepromMem , IO_REG_EEPROM_MEM_ADDR , uint8_t, REG_PERM_RW , 0x00  );
 
 

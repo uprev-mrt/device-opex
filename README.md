@@ -88,8 +88,16 @@
         <td>Output of ADC 4</td>
     </tr>
     <tr>
-        <td><a href="#register_gpio_0_cfg_detail">GPIO_0_CFG</a></td>
+        <td><a href="#register_irq_src_detail">IRQ_SRC</a></td>
         <td>0x10</td>
+        <td>uint16</td>
+        <td>R</td>
+        <td>0x0000</td>
+        <td>latching Interrupt source mask</td>
+    </tr>
+    <tr>
+        <td><a href="#register_gpio_0_cfg_detail">GPIO_0_CFG</a></td>
+        <td>0x20</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -97,7 +105,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_1_cfg_detail">GPIO_1_CFG</a></td>
-        <td>0x11</td>
+        <td>0x21</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -105,7 +113,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_2_cfg_detail">GPIO_2_CFG</a></td>
-        <td>0x12</td>
+        <td>0x22</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -113,7 +121,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_3_cfg_detail">GPIO_3_CFG</a></td>
-        <td>0x13</td>
+        <td>0x23</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -121,7 +129,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_4_cfg_detail">GPIO_4_CFG</a></td>
-        <td>0x14</td>
+        <td>0x24</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -129,7 +137,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_5_cfg_detail">GPIO_5_CFG</a></td>
-        <td>0x15</td>
+        <td>0x25</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -137,7 +145,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_6_cfg_detail">GPIO_6_CFG</a></td>
-        <td>0x16</td>
+        <td>0x26</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -145,7 +153,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_7_cfg_detail">GPIO_7_CFG</a></td>
-        <td>0x17</td>
+        <td>0x27</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -153,7 +161,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_8_cfg_detail">GPIO_8_CFG</a></td>
-        <td>0x18</td>
+        <td>0x28</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -161,7 +169,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_9_cfg_detail">GPIO_9_CFG</a></td>
-        <td>0x19</td>
+        <td>0x29</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -169,7 +177,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_10_cfg_detail">GPIO_10_CFG</a></td>
-        <td>0x1A</td>
+        <td>0x2A</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -177,7 +185,7 @@
     </tr>
     <tr>
         <td><a href="#register_gpio_11_cfg_detail">GPIO_11_CFG</a></td>
-        <td>0x1B</td>
+        <td>0x2B</td>
         <td>uint8</td>
         <td>RW</td>
         <td>0x00</td>
@@ -185,7 +193,7 @@
     </tr>
     <tr>
         <td><a href="#register_adc_0_cfg_detail">ADC_0_CFG</a></td>
-        <td>0x20</td>
+        <td>0x30</td>
         <td>uint16</td>
         <td>RW</td>
         <td>0x0000</td>
@@ -193,7 +201,7 @@
     </tr>
     <tr>
         <td><a href="#register_adc_1_cfg_detail">ADC_1_CFG</a></td>
-        <td>0x22</td>
+        <td>0x32</td>
         <td>uint16</td>
         <td>RW</td>
         <td>0x0000</td>
@@ -201,7 +209,7 @@
     </tr>
     <tr>
         <td><a href="#register_adc_2_cfg_detail">ADC_2_CFG</a></td>
-        <td>0x24</td>
+        <td>0x34</td>
         <td>uint16</td>
         <td>RW</td>
         <td>0x0000</td>
@@ -209,7 +217,7 @@
     </tr>
     <tr>
         <td><a href="#register_adc_3_cfg_detail">ADC_3_CFG</a></td>
-        <td>0x26</td>
+        <td>0x36</td>
         <td>uint16</td>
         <td>RW</td>
         <td>0x0000</td>
@@ -217,7 +225,7 @@
     </tr>
     <tr>
         <td><a href="#register_adc_4_cfg_detail">ADC_4_CFG</a></td>
-        <td>0x28</td>
+        <td>0x38</td>
         <td>uint16</td>
         <td>RW</td>
         <td>0x0000</td>
@@ -225,11 +233,19 @@
     </tr>
     <tr>
         <td><a href="#register_pwm_config_detail">PWM_CONFIG</a></td>
-        <td>0x30</td>
+        <td>0x40</td>
         <td>uint32</td>
         <td>RW</td>
         <td>0x00000000</td>
         <td>Configuration for PWM</td>
+    </tr>
+    <tr>
+        <td><a href="#register_who_am_i_detail">WHO_AM_I</a></td>
+        <td>0x60</td>
+        <td>uint8</td>
+        <td>RW</td>
+        <td>0xAB</td>
+        <td>Device ID</td>
     </tr>
     <tr>
         <td><a href="#register_eeprom_mem_detail">EEPROM_MEM</a></td>
@@ -371,11 +387,15 @@
   </tr>
   <tr>
     <th class="smallCell">Field</th>
-   <td class="empty" colspan="16"></td>
+   <td class="field" colspan="16">ADC_0_VAL</td>
 
   </tr>
 </table>
 
+
+<h2> Fields:</h2>
+
+<b>ADC_0_VAL:</b> Output of ADC 0
 
 
 <div id="register_adc_1_val_detail" class="packet">
@@ -411,11 +431,15 @@
   </tr>
   <tr>
     <th class="smallCell">Field</th>
-   <td class="empty" colspan="16"></td>
+   <td class="field" colspan="16">ADC_1_VAL</td>
 
   </tr>
 </table>
 
+
+<h2> Fields:</h2>
+
+<b>ADC_1_VAL:</b> Output of ADC 1
 
 
 <div id="register_adc_2_val_detail" class="packet">
@@ -451,11 +475,15 @@
   </tr>
   <tr>
     <th class="smallCell">Field</th>
-   <td class="empty" colspan="16"></td>
+   <td class="field" colspan="16">ADC_2_VAL</td>
 
   </tr>
 </table>
 
+
+<h2> Fields:</h2>
+
+<b>ADC_2_VAL:</b> Output of ADC 2
 
 
 <div id="register_adc_3_val_detail" class="packet">
@@ -491,11 +519,15 @@
   </tr>
   <tr>
     <th class="smallCell">Field</th>
-   <td class="empty" colspan="16"></td>
+   <td class="field" colspan="16">ADC_3_VAL</td>
 
   </tr>
 </table>
 
+
+<h2> Fields:</h2>
+
+<b>ADC_3_VAL:</b> Output of ADC 3
 
 
 <div id="register_adc_4_val_detail" class="packet">
@@ -531,18 +563,66 @@
   </tr>
   <tr>
     <th class="smallCell">Field</th>
-   <td class="empty" colspan="16"></td>
+   <td class="field" colspan="16">ADC_4_VAL</td>
 
   </tr>
 </table>
 
+
+<h2> Fields:</h2>
+
+<b>ADC_4_VAL:</b> Output of ADC 4
+
+
+<div id="register_irq_src_detail" class="packet">
+<h2>IRQ_SRC </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x10]</b></li>
+</ul>
+
+<p>latching Interrupt source mask</p>
+<!--*user-block-irq_src-start*-->
+
+<!--*user-block-irq_src-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">IRQ_SRC</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>IRQ_SRC:</b> latching Interrupt source mask
 
 
 <div id="register_gpio_0_cfg_detail" class="packet">
 <h2>GPIO_0_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x10]</b></li>
+    <li class="note">  Address: <b>[0x20]</b></li>
 </ul>
 
 <p>Configuration for GPIO 0</p>
@@ -595,7 +675,7 @@
 <h2>GPIO_1_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x11]</b></li>
+    <li class="note">  Address: <b>[0x21]</b></li>
 </ul>
 
 <p>Configuration for GPIO 1</p>
@@ -648,7 +728,7 @@
 <h2>GPIO_2_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x12]</b></li>
+    <li class="note">  Address: <b>[0x22]</b></li>
 </ul>
 
 <p>Configuration for GPIO 2</p>
@@ -701,7 +781,7 @@
 <h2>GPIO_3_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x13]</b></li>
+    <li class="note">  Address: <b>[0x23]</b></li>
 </ul>
 
 <p>Configuration for GPIO 3</p>
@@ -754,7 +834,7 @@
 <h2>GPIO_4_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x14]</b></li>
+    <li class="note">  Address: <b>[0x24]</b></li>
 </ul>
 
 <p>Configuration for GPIO 4</p>
@@ -807,7 +887,7 @@
 <h2>GPIO_5_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x15]</b></li>
+    <li class="note">  Address: <b>[0x25]</b></li>
 </ul>
 
 <p>Configuration for GPIO 5</p>
@@ -860,7 +940,7 @@
 <h2>GPIO_6_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x16]</b></li>
+    <li class="note">  Address: <b>[0x26]</b></li>
 </ul>
 
 <p>Configuration for GPIO 6</p>
@@ -913,7 +993,7 @@
 <h2>GPIO_7_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x17]</b></li>
+    <li class="note">  Address: <b>[0x27]</b></li>
 </ul>
 
 <p>Configuration for GPIO 7</p>
@@ -966,7 +1046,7 @@
 <h2>GPIO_8_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x18]</b></li>
+    <li class="note">  Address: <b>[0x28]</b></li>
 </ul>
 
 <p>Configuration for GPIO 8</p>
@@ -1019,7 +1099,7 @@
 <h2>GPIO_9_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x19]</b></li>
+    <li class="note">  Address: <b>[0x29]</b></li>
 </ul>
 
 <p>Configuration for GPIO 9</p>
@@ -1072,7 +1152,7 @@
 <h2>GPIO_10_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x1A]</b></li>
+    <li class="note">  Address: <b>[0x2A]</b></li>
 </ul>
 
 <p>Configuration for GPIO 10</p>
@@ -1125,7 +1205,7 @@
 <h2>GPIO_11_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x1B]</b></li>
+    <li class="note">  Address: <b>[0x2B]</b></li>
 </ul>
 
 <p>Configuration for GPIO 11</p>
@@ -1178,7 +1258,7 @@
 <h2>ADC_0_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x20]</b></li>
+    <li class="note">  Address: <b>[0x30]</b></li>
 </ul>
 
 <p>Configuration for ADC 0</p>
@@ -1237,7 +1317,7 @@
 <h2>ADC_1_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x22]</b></li>
+    <li class="note">  Address: <b>[0x32]</b></li>
 </ul>
 
 <p>Configuration for ADC 1</p>
@@ -1296,7 +1376,7 @@
 <h2>ADC_2_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x24]</b></li>
+    <li class="note">  Address: <b>[0x34]</b></li>
 </ul>
 
 <p>Configuration for ADC 2</p>
@@ -1355,7 +1435,7 @@
 <h2>ADC_3_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x26]</b></li>
+    <li class="note">  Address: <b>[0x36]</b></li>
 </ul>
 
 <p>Configuration for ADC 3</p>
@@ -1414,7 +1494,7 @@
 <h2>ADC_4_CFG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x28]</b></li>
+    <li class="note">  Address: <b>[0x38]</b></li>
 </ul>
 
 <p>Configuration for ADC 4</p>
@@ -1473,7 +1553,7 @@
 <h2>PWM_CONFIG </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x30]</b></li>
+    <li class="note">  Address: <b>[0x40]</b></li>
 </ul>
 
 <p>Configuration for PWM</p>
@@ -1568,6 +1648,54 @@
 <tr><td> PRESCALER_32768 </td><td> b1111 </td><td>  divide clock by 32768 ()</td></tr>
 </table>
 
+
+
+<div id="register_who_am_i_detail" class="packet">
+<h2>WHO_AM_I </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x60]</b></li>
+    <li class="note">  Default: <b>[0xAB]</b></li>
+</ul>
+
+<p>Device ID</p>
+<!--*user-block-who_am_i-start*-->
+
+<!--*user-block-who_am_i-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="8">WHO_AM_I</td>
+
+  </tr>
+  <tr>
+    <th class="smallCell">Default</th>
+      <td class="one" >1</td>
+      <td class="zero" >0</td>
+      <td class="one" >1</td>
+      <td class="zero" >0</td>
+      <td class="one" >1</td>
+      <td class="zero" >0</td>
+      <td class="one" >1</td>
+      <td class="one" >1</td>
+   </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>WHO_AM_I:</b> Device ID
 
 
 <div id="register_eeprom_mem_detail" class="packet">
