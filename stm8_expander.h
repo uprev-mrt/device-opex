@@ -14,7 +14,6 @@ extern "C"
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "Devices/RegDevice/register_device.h"
 #include "stm8_expander_regs.h"
 
 /*user-block-top-start*/
