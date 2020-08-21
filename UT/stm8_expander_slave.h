@@ -93,8 +93,6 @@ typedef struct{
 
 #pragma pack(pop)
 
-extern stm8_expander_slave_t REGS;
-
 /**
  * @brief initializes stm8_expander slave registers
  * @param fifoDepth size of rxFifo to use
@@ -118,6 +116,12 @@ void io_slave_put( uint8_t data );
  * @param data byte to feed 
  */
 uint8_t io_slave_get(void);
+
+/**
+ * @brief ends transaction and resets state
+ * 
+ */
+void io_slave_end_transaction(void);
 
 
 

@@ -41,35 +41,35 @@ static void slave_reg_init(slave_reg_t* reg, addr_t addr, addr_t size, uint8_t f
  */
 void io_slave_init( )
 {
-    slave_reg_init(&REGS.mRegs[0],2,2, SLAVE_REG_PERM_R ); //GPIO_IN
-    slave_reg_init(&REGS.mRegs[1],4,2, SLAVE_REG_PERM_RW ); //GPIO_OUT
-    slave_reg_init(&REGS.mRegs[2],6,2, SLAVE_REG_PERM_R ); //ADC_0_VAL
-    slave_reg_init(&REGS.mRegs[3],8,2, SLAVE_REG_PERM_R ); //ADC_1_VAL
-    slave_reg_init(&REGS.mRegs[4],10,2, SLAVE_REG_PERM_R ); //ADC_2_VAL
-    slave_reg_init(&REGS.mRegs[5],12,2, SLAVE_REG_PERM_R ); //ADC_3_VAL
-    slave_reg_init(&REGS.mRegs[6],14,2, SLAVE_REG_PERM_R ); //ADC_4_VAL
-    slave_reg_init(&REGS.mRegs[7],16,2, SLAVE_REG_PERM_R ); //IRQ_SRC
-    slave_reg_init(&REGS.mRegs[8],17,1, SLAVE_REG_PERM_RW ); //GPIO_0_CFG
-    slave_reg_init(&REGS.mRegs[9],18,1, SLAVE_REG_PERM_RW ); //GPIO_1_CFG
-    slave_reg_init(&REGS.mRegs[10],19,1, SLAVE_REG_PERM_RW ); //GPIO_2_CFG
-    slave_reg_init(&REGS.mRegs[11],20,1, SLAVE_REG_PERM_RW ); //GPIO_3_CFG
-    slave_reg_init(&REGS.mRegs[12],21,1, SLAVE_REG_PERM_RW ); //GPIO_4_CFG
-    slave_reg_init(&REGS.mRegs[13],22,1, SLAVE_REG_PERM_RW ); //GPIO_5_CFG
-    slave_reg_init(&REGS.mRegs[14],23,1, SLAVE_REG_PERM_RW ); //GPIO_6_CFG
-    slave_reg_init(&REGS.mRegs[15],24,1, SLAVE_REG_PERM_RW ); //GPIO_7_CFG
-    slave_reg_init(&REGS.mRegs[16],25,1, SLAVE_REG_PERM_RW ); //GPIO_8_CFG
-    slave_reg_init(&REGS.mRegs[17],26,1, SLAVE_REG_PERM_RW ); //GPIO_9_CFG
-    slave_reg_init(&REGS.mRegs[18],27,1, SLAVE_REG_PERM_RW ); //GPIO_10_CFG
-    slave_reg_init(&REGS.mRegs[19],28,1, SLAVE_REG_PERM_RW ); //GPIO_11_CFG
-    slave_reg_init(&REGS.mRegs[20],30,2, SLAVE_REG_PERM_RW ); //ADC_0_CFG
-    slave_reg_init(&REGS.mRegs[21],32,2, SLAVE_REG_PERM_RW ); //ADC_1_CFG
-    slave_reg_init(&REGS.mRegs[22],34,2, SLAVE_REG_PERM_RW ); //ADC_2_CFG
-    slave_reg_init(&REGS.mRegs[23],36,2, SLAVE_REG_PERM_RW ); //ADC_3_CFG
-    slave_reg_init(&REGS.mRegs[24],38,2, SLAVE_REG_PERM_RW ); //ADC_4_CFG
-    slave_reg_init(&REGS.mRegs[25],42,4, SLAVE_REG_PERM_RW ); //PWM_CONFIG
-    slave_reg_init(&REGS.mRegs[26],43,1, SLAVE_REG_PERM_RW ); //WHO_AM_I
+    slave_reg_init(&REGS.mRegs[0],0,2, SLAVE_REG_PERM_R ); //GPIO_IN
+    slave_reg_init(&REGS.mRegs[1],2,2, SLAVE_REG_PERM_RW ); //GPIO_OUT
+    slave_reg_init(&REGS.mRegs[2],4,2, SLAVE_REG_PERM_R ); //ADC_0_VAL
+    slave_reg_init(&REGS.mRegs[3],6,2, SLAVE_REG_PERM_R ); //ADC_1_VAL
+    slave_reg_init(&REGS.mRegs[4],8,2, SLAVE_REG_PERM_R ); //ADC_2_VAL
+    slave_reg_init(&REGS.mRegs[5],10,2, SLAVE_REG_PERM_R ); //ADC_3_VAL
+    slave_reg_init(&REGS.mRegs[6],12,2, SLAVE_REG_PERM_R ); //ADC_4_VAL
+    slave_reg_init(&REGS.mRegs[7],14,2, SLAVE_REG_PERM_R ); //IRQ_SRC
+    slave_reg_init(&REGS.mRegs[8],16,1, SLAVE_REG_PERM_RW ); //GPIO_0_CFG
+    slave_reg_init(&REGS.mRegs[9],17,1, SLAVE_REG_PERM_RW ); //GPIO_1_CFG
+    slave_reg_init(&REGS.mRegs[10],18,1, SLAVE_REG_PERM_RW ); //GPIO_2_CFG
+    slave_reg_init(&REGS.mRegs[11],19,1, SLAVE_REG_PERM_RW ); //GPIO_3_CFG
+    slave_reg_init(&REGS.mRegs[12],20,1, SLAVE_REG_PERM_RW ); //GPIO_4_CFG
+    slave_reg_init(&REGS.mRegs[13],21,1, SLAVE_REG_PERM_RW ); //GPIO_5_CFG
+    slave_reg_init(&REGS.mRegs[14],22,1, SLAVE_REG_PERM_RW ); //GPIO_6_CFG
+    slave_reg_init(&REGS.mRegs[15],23,1, SLAVE_REG_PERM_RW ); //GPIO_7_CFG
+    slave_reg_init(&REGS.mRegs[16],24,1, SLAVE_REG_PERM_RW ); //GPIO_8_CFG
+    slave_reg_init(&REGS.mRegs[17],25,1, SLAVE_REG_PERM_RW ); //GPIO_9_CFG
+    slave_reg_init(&REGS.mRegs[18],26,1, SLAVE_REG_PERM_RW ); //GPIO_10_CFG
+    slave_reg_init(&REGS.mRegs[19],27,1, SLAVE_REG_PERM_RW ); //GPIO_11_CFG
+    slave_reg_init(&REGS.mRegs[20],28,2, SLAVE_REG_PERM_RW ); //ADC_0_CFG
+    slave_reg_init(&REGS.mRegs[21],30,2, SLAVE_REG_PERM_RW ); //ADC_1_CFG
+    slave_reg_init(&REGS.mRegs[22],32,2, SLAVE_REG_PERM_RW ); //ADC_2_CFG
+    slave_reg_init(&REGS.mRegs[23],34,2, SLAVE_REG_PERM_RW ); //ADC_3_CFG
+    slave_reg_init(&REGS.mRegs[24],36,2, SLAVE_REG_PERM_RW ); //ADC_4_CFG
+    slave_reg_init(&REGS.mRegs[25],38,4, SLAVE_REG_PERM_RW ); //PWM_CONFIG
+    slave_reg_init(&REGS.mRegs[26],42,1, SLAVE_REG_PERM_RW ); //WHO_AM_I
     REGS.mData.mWhoAmI = IO_WHO_AM_I_DEFAULT                                       ; 
-    slave_reg_init(&REGS.mRegs[27],44,1, SLAVE_REG_PERM_RW ); //EEPROM_MEM
+    slave_reg_init(&REGS.mRegs[27],43,1, SLAVE_REG_PERM_RW ); //EEPROM_MEM
 
     REGS.mCurrentReg = 0;
     REGS.mCursor = 0;
@@ -122,8 +122,14 @@ uint8_t io_slave_get(void)
         REGS.mFlags |= SLAVE_REG_ACESS_R;
         return DATA[REGS.mCursor++];                   //Return data
      }
-
+    
      return 0;
+}
+
+void io_slave_end_transaction(void)
+{
+    REGS.mState = SLAVE_STATE_ADDRESS;
+    REGS.mAddrBytes = 0;
 }
 
 

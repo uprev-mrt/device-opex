@@ -15,34 +15,34 @@
   Register Addresses                                                                              
 *******************************************************************************/
 
-#define IO_REG_GPIO_IN_ADDR                                        0x02 /* Input values for gpio 0-15 */
-#define IO_REG_GPIO_OUT_ADDR                                       0x04 /* Output values for gpio 0-15 */
-#define IO_REG_ADC_0_VAL_ADDR                                      0x06 /* Output of ADC 0 */
-#define IO_REG_ADC_1_VAL_ADDR                                      0x08 /* Output of ADC 1 */
-#define IO_REG_ADC_2_VAL_ADDR                                      0x0A /* Output of ADC 2 */
-#define IO_REG_ADC_3_VAL_ADDR                                      0x0C /* Output of ADC 3 */
-#define IO_REG_ADC_4_VAL_ADDR                                      0x0E /* Output of ADC 4 */
-#define IO_REG_IRQ_SRC_ADDR                                        0x10 /* latching Interrupt source mask */
-#define IO_REG_GPIO_0_CFG_ADDR                                     0x11 /* Configuration for GPIO 0 */
-#define IO_REG_GPIO_1_CFG_ADDR                                     0x12 /* Configuration for GPIO 1 */
-#define IO_REG_GPIO_2_CFG_ADDR                                     0x13 /* Configuration for GPIO 2 */
-#define IO_REG_GPIO_3_CFG_ADDR                                     0x14 /* Configuration for GPIO 3 */
-#define IO_REG_GPIO_4_CFG_ADDR                                     0x15 /* Configuration for GPIO 4 */
-#define IO_REG_GPIO_5_CFG_ADDR                                     0x16 /* Configuration for GPIO 5 */
-#define IO_REG_GPIO_6_CFG_ADDR                                     0x17 /* Configuration for GPIO 6 */
-#define IO_REG_GPIO_7_CFG_ADDR                                     0x18 /* Configuration for GPIO 7 */
-#define IO_REG_GPIO_8_CFG_ADDR                                     0x19 /* Configuration for GPIO 8 */
-#define IO_REG_GPIO_9_CFG_ADDR                                     0x1A /* Configuration for GPIO 9 */
-#define IO_REG_GPIO_10_CFG_ADDR                                    0x1B /* Configuration for GPIO 10 */
-#define IO_REG_GPIO_11_CFG_ADDR                                    0x1C /* Configuration for GPIO 11 */
-#define IO_REG_ADC_0_CFG_ADDR                                      0x1E /* Configuration for ADC 0 */
-#define IO_REG_ADC_1_CFG_ADDR                                      0x20 /* Configuration for ADC 1 */
-#define IO_REG_ADC_2_CFG_ADDR                                      0x22 /* Configuration for ADC 2 */
-#define IO_REG_ADC_3_CFG_ADDR                                      0x24 /* Configuration for ADC 3 */
-#define IO_REG_ADC_4_CFG_ADDR                                      0x26 /* Configuration for ADC 4 */
-#define IO_REG_PWM_CONFIG_ADDR                                     0x2A /* Configuration for PWM */
-#define IO_REG_WHO_AM_I_ADDR                                       0x2B /* Device ID */
-#define IO_REG_EEPROM_MEM_ADDR                                     0x2C /* Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address */
+#define IO_REG_GPIO_IN_ADDR                                        0x00 /* Input values for gpio 0-15 */
+#define IO_REG_GPIO_OUT_ADDR                                       0x02 /* Output values for gpio 0-15 */
+#define IO_REG_ADC_0_VAL_ADDR                                      0x04 /* Output of ADC 0 */
+#define IO_REG_ADC_1_VAL_ADDR                                      0x06 /* Output of ADC 1 */
+#define IO_REG_ADC_2_VAL_ADDR                                      0x08 /* Output of ADC 2 */
+#define IO_REG_ADC_3_VAL_ADDR                                      0x0A /* Output of ADC 3 */
+#define IO_REG_ADC_4_VAL_ADDR                                      0x0C /* Output of ADC 4 */
+#define IO_REG_IRQ_SRC_ADDR                                        0x0E /* latching Interrupt source mask */
+#define IO_REG_GPIO_0_CFG_ADDR                                     0x10 /* Configuration for GPIO 0 */
+#define IO_REG_GPIO_1_CFG_ADDR                                     0x11 /* Configuration for GPIO 1 */
+#define IO_REG_GPIO_2_CFG_ADDR                                     0x12 /* Configuration for GPIO 2 */
+#define IO_REG_GPIO_3_CFG_ADDR                                     0x13 /* Configuration for GPIO 3 */
+#define IO_REG_GPIO_4_CFG_ADDR                                     0x14 /* Configuration for GPIO 4 */
+#define IO_REG_GPIO_5_CFG_ADDR                                     0x15 /* Configuration for GPIO 5 */
+#define IO_REG_GPIO_6_CFG_ADDR                                     0x16 /* Configuration for GPIO 6 */
+#define IO_REG_GPIO_7_CFG_ADDR                                     0x17 /* Configuration for GPIO 7 */
+#define IO_REG_GPIO_8_CFG_ADDR                                     0x18 /* Configuration for GPIO 8 */
+#define IO_REG_GPIO_9_CFG_ADDR                                     0x19 /* Configuration for GPIO 9 */
+#define IO_REG_GPIO_10_CFG_ADDR                                    0x1A /* Configuration for GPIO 10 */
+#define IO_REG_GPIO_11_CFG_ADDR                                    0x1B /* Configuration for GPIO 11 */
+#define IO_REG_ADC_0_CFG_ADDR                                      0x1C /* Configuration for ADC 0 */
+#define IO_REG_ADC_1_CFG_ADDR                                      0x1E /* Configuration for ADC 1 */
+#define IO_REG_ADC_2_CFG_ADDR                                      0x20 /* Configuration for ADC 2 */
+#define IO_REG_ADC_3_CFG_ADDR                                      0x22 /* Configuration for ADC 3 */
+#define IO_REG_ADC_4_CFG_ADDR                                      0x24 /* Configuration for ADC 4 */
+#define IO_REG_PWM_CONFIG_ADDR                                     0x26 /* Configuration for PWM */
+#define IO_REG_WHO_AM_I_ADDR                                       0x2A /* Device ID */
+#define IO_REG_EEPROM_MEM_ADDR                                     0x2B /* Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address */
 
 
 /*******************************************************************************
