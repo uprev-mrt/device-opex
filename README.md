@@ -49,51 +49,99 @@
     </tr>
     <tr>
         <td><a href="#register_adc_0_val_detail">ADC_0_VAL</a></td>
+        <td>0x04</td>
+        <td>uint16</td>
+        <td>R</td>
+        <td>0x0000</td>
+        <td>Analog value on ADC0</td>
+    </tr>
+    <tr>
+        <td><a href="#register_adc_1_val_detail">ADC_1_VAL</a></td>
         <td>0x06</td>
         <td>uint16</td>
         <td>R</td>
         <td>0x0000</td>
-        <td>Output of ADC 0</td>
+        <td>Analog value on ADC1</td>
     </tr>
     <tr>
-        <td><a href="#register_adc_1_val_detail">ADC_1_VAL</a></td>
+        <td><a href="#register_adc_2_val_detail">ADC_2_VAL</a></td>
         <td>0x08</td>
         <td>uint16</td>
         <td>R</td>
         <td>0x0000</td>
-        <td>Output of ADC 1</td>
+        <td>Analog value on ADC2</td>
     </tr>
     <tr>
-        <td><a href="#register_adc_2_val_detail">ADC_2_VAL</a></td>
+        <td><a href="#register_adc_3_val_detail">ADC_3_VAL</a></td>
         <td>0x0A</td>
         <td>uint16</td>
         <td>R</td>
         <td>0x0000</td>
-        <td>Output of ADC 2</td>
+        <td>Analog value on ADC3</td>
     </tr>
     <tr>
-        <td><a href="#register_adc_3_val_detail">ADC_3_VAL</a></td>
+        <td><a href="#register_adc_4_val_detail">ADC_4_VAL</a></td>
         <td>0x0C</td>
         <td>uint16</td>
         <td>R</td>
         <td>0x0000</td>
-        <td>Output of ADC 3</td>
+        <td>Analog value on ADC4</td>
     </tr>
     <tr>
-        <td><a href="#register_adc_4_val_detail">ADC_4_VAL</a></td>
-        <td>0x0E</td>
+        <td><a href="#register_pwm_0_val_detail">PWM_0_VAL</a></td>
+        <td>0x0F</td>
         <td>uint16</td>
-        <td>R</td>
+        <td>W</td>
         <td>0x0000</td>
-        <td>Output of ADC 4</td>
+        <td>PWM value for ch 0</td>
+    </tr>
+    <tr>
+        <td><a href="#register_pwm_1_val_detail">PWM_1_VAL</a></td>
+        <td>0x11</td>
+        <td>uint16</td>
+        <td>W</td>
+        <td>0x0000</td>
+        <td>PWM value for ch 1</td>
+    </tr>
+    <tr>
+        <td><a href="#register_pwm_2_val_detail">PWM_2_VAL</a></td>
+        <td>0x13</td>
+        <td>uint16</td>
+        <td>W</td>
+        <td>0x0000</td>
+        <td>PWM value for ch 2</td>
+    </tr>
+    <tr>
+        <td><a href="#register_pwm_3_val_detail">PWM_3_VAL</a></td>
+        <td>0x15</td>
+        <td>uint16</td>
+        <td>W</td>
+        <td>0x0000</td>
+        <td>PWM value for ch 3</td>
+    </tr>
+    <tr>
+        <td><a href="#register_pwm_4_val_detail">PWM_4_VAL</a></td>
+        <td>0x17</td>
+        <td>uint16</td>
+        <td>W</td>
+        <td>0x0000</td>
+        <td>PWM value for ch 4</td>
+    </tr>
+    <tr>
+        <td><a href="#register_pwm_5_val_detail">PWM_5_VAL</a></td>
+        <td>0x19</td>
+        <td>uint16</td>
+        <td>W</td>
+        <td>0x0000</td>
+        <td>PWM value for ch 5</td>
     </tr>
     <tr>
         <td><a href="#register_irq_src_detail">IRQ_SRC</a></td>
-        <td>0x10</td>
+        <td>0x1F</td>
         <td>uint16</td>
         <td>R</td>
         <td>0x0000</td>
-        <td>latching Interrupt source mask</td>
+        <td>latching Interrupt source mask. indicates souce of IRQ resets on read</td>
     </tr>
     <tr>
         <td><a href="#register_gpio_0_cfg_detail">GPIO_0_CFG</a></td>
@@ -190,6 +238,14 @@
         <td>RW</td>
         <td>0x00</td>
         <td>Configuration for GPIO 11</td>
+    </tr>
+    <tr>
+        <td><a href="#register_gpio_12_cfg_detail">GPIO_12_CFG</a></td>
+        <td>0x2D</td>
+        <td>uint8</td>
+        <td>RW</td>
+        <td>0x00</td>
+        <td>Configuration for GPIO 12</td>
     </tr>
     <tr>
         <td><a href="#register_adc_0_cfg_detail">ADC_0_CFG</a></td>
@@ -358,10 +414,10 @@
 <h2>ADC_0_VAL </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x06]</b></li>
+    <li class="note">  Address: <b>[0x04]</b></li>
 </ul>
 
-<p>Output of ADC 0</p>
+<p>Analog value on ADC0</p>
 <!--*user-block-adc_0_val-start*-->
 
 <!--*user-block-adc_0_val-end*-->
@@ -395,17 +451,17 @@
 
 <h2> Fields:</h2>
 
-<b>ADC_0_VAL:</b> Output of ADC 0
+<b>ADC_0_VAL:</b> Analog value on ADC0
 
 
 <div id="register_adc_1_val_detail" class="packet">
 <h2>ADC_1_VAL </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x08]</b></li>
+    <li class="note">  Address: <b>[0x06]</b></li>
 </ul>
 
-<p>Output of ADC 1</p>
+<p>Analog value on ADC1</p>
 <!--*user-block-adc_1_val-start*-->
 
 <!--*user-block-adc_1_val-end*-->
@@ -439,17 +495,17 @@
 
 <h2> Fields:</h2>
 
-<b>ADC_1_VAL:</b> Output of ADC 1
+<b>ADC_1_VAL:</b> Analog value on ADC1
 
 
 <div id="register_adc_2_val_detail" class="packet">
 <h2>ADC_2_VAL </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x0A]</b></li>
+    <li class="note">  Address: <b>[0x08]</b></li>
 </ul>
 
-<p>Output of ADC 2</p>
+<p>Analog value on ADC2</p>
 <!--*user-block-adc_2_val-start*-->
 
 <!--*user-block-adc_2_val-end*-->
@@ -483,17 +539,17 @@
 
 <h2> Fields:</h2>
 
-<b>ADC_2_VAL:</b> Output of ADC 2
+<b>ADC_2_VAL:</b> Analog value on ADC2
 
 
 <div id="register_adc_3_val_detail" class="packet">
 <h2>ADC_3_VAL </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x0C]</b></li>
+    <li class="note">  Address: <b>[0x0A]</b></li>
 </ul>
 
-<p>Output of ADC 3</p>
+<p>Analog value on ADC3</p>
 <!--*user-block-adc_3_val-start*-->
 
 <!--*user-block-adc_3_val-end*-->
@@ -527,17 +583,17 @@
 
 <h2> Fields:</h2>
 
-<b>ADC_3_VAL:</b> Output of ADC 3
+<b>ADC_3_VAL:</b> Analog value on ADC3
 
 
 <div id="register_adc_4_val_detail" class="packet">
 <h2>ADC_4_VAL </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x0E]</b></li>
+    <li class="note">  Address: <b>[0x0C]</b></li>
 </ul>
 
-<p>Output of ADC 4</p>
+<p>Analog value on ADC4</p>
 <!--*user-block-adc_4_val-start*-->
 
 <!--*user-block-adc_4_val-end*-->
@@ -571,17 +627,281 @@
 
 <h2> Fields:</h2>
 
-<b>ADC_4_VAL:</b> Output of ADC 4
+<b>ADC_4_VAL:</b> Analog value on ADC4
+
+
+<div id="register_pwm_0_val_detail" class="packet">
+<h2>PWM_0_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x0F]</b></li>
+</ul>
+
+<p>PWM value for ch 0</p>
+<!--*user-block-pwm_0_val-start*-->
+
+<!--*user-block-pwm_0_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_0_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_0_VAL:</b> PWM value for ch 0
+
+
+<div id="register_pwm_1_val_detail" class="packet">
+<h2>PWM_1_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x11]</b></li>
+</ul>
+
+<p>PWM value for ch 1</p>
+<!--*user-block-pwm_1_val-start*-->
+
+<!--*user-block-pwm_1_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_1_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_1_VAL:</b> PWM value for ch 1
+
+
+<div id="register_pwm_2_val_detail" class="packet">
+<h2>PWM_2_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x13]</b></li>
+</ul>
+
+<p>PWM value for ch 2</p>
+<!--*user-block-pwm_2_val-start*-->
+
+<!--*user-block-pwm_2_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_2_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_2_VAL:</b> PWM value for ch 2
+
+
+<div id="register_pwm_3_val_detail" class="packet">
+<h2>PWM_3_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x15]</b></li>
+</ul>
+
+<p>PWM value for ch 3</p>
+<!--*user-block-pwm_3_val-start*-->
+
+<!--*user-block-pwm_3_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_3_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_3_VAL:</b> PWM value for ch 3
+
+
+<div id="register_pwm_4_val_detail" class="packet">
+<h2>PWM_4_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x17]</b></li>
+</ul>
+
+<p>PWM value for ch 4</p>
+<!--*user-block-pwm_4_val-start*-->
+
+<!--*user-block-pwm_4_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_4_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_4_VAL:</b> PWM value for ch 4
+
+
+<div id="register_pwm_5_val_detail" class="packet">
+<h2>PWM_5_VAL </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x19]</b></li>
+</ul>
+
+<p>PWM value for ch 5</p>
+<!--*user-block-pwm_5_val-start*-->
+
+<!--*user-block-pwm_5_val-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 15</th>
+    <th> 14</th>
+    <th> 13</th>
+    <th> 12</th>
+    <th> 11</th>
+    <th> 10</th>
+    <th> 9</th>
+    <th> 8</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="16">PWM_5_VAL</td>
+
+  </tr>
+</table>
+
+
+<h2> Fields:</h2>
+
+<b>PWM_5_VAL:</b> PWM value for ch 5
 
 
 <div id="register_irq_src_detail" class="packet">
 <h2>IRQ_SRC </h2>
 <hr/>
 <ul>
-    <li class="note">  Address: <b>[0x10]</b></li>
+    <li class="note">  Address: <b>[0x1F]</b></li>
 </ul>
 
-<p>latching Interrupt source mask</p>
+<p>latching Interrupt source mask. indicates souce of IRQ resets on read</p>
 <!--*user-block-irq_src-start*-->
 
 <!--*user-block-irq_src-end*-->
@@ -615,7 +935,7 @@
 
 <h2> Fields:</h2>
 
-<b>IRQ_SRC:</b> latching Interrupt source mask
+<b>IRQ_SRC:</b> latching Interrupt source mask. indicates souce of IRQ resets on read
 
 
 <div id="register_gpio_0_cfg_detail" class="packet">
@@ -1212,6 +1532,59 @@
 <!--*user-block-gpio_11_cfg-start*-->
 
 <!--*user-block-gpio_11_cfg-end*-->
+<table class="fields" width="80%">
+  <tr>
+    <th class="smallCell">bit</th>
+    <th> 7</th>
+    <th> 6</th>
+    <th> 5</th>
+    <th> 4</th>
+    <th> 3</th>
+    <th> 2</th>
+    <th> 1</th>
+    <th> 0</th>
+  </tr>
+  <tr>
+    <th class="smallCell">Field</th>
+   <td class="field" colspan="1">DIR</td>
+<td class="field" colspan="1">PP</td>
+<td class="field" colspan="2">IRQ</td>
+<td class="field" colspan="1">ALT</td>
+<td class="empty" colspan="2"></td>
+<td class="field" colspan="1">EN</td>
+
+  </tr>
+</table>
+
+<h2> Flags:</h2>
+<b>DIR:</b> Pin Direction<br>
+<b>PP:</b> Enables Push/Pull, Otherwise pin is OpenDrain/floating<br>
+<b>ALT:</b> Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)<br>
+<b>EN:</b> Enables GPIO<br>
+
+<h2> Fields:</h2>
+
+<b>IRQ:</b> Interrupt selection
+<table>
+<tr><td> NONE </td><td> b00 </td><td>  No interrupt</td></tr>
+<tr><td> RISING </td><td> b01 </td><td>  Trigger on Rising</td></tr>
+<tr><td> FALLING </td><td> b10 </td><td>  Trigger on falling</td></tr>
+<tr><td> ANY </td><td> b11 </td><td>  Trigger on any</td></tr>
+</table>
+
+
+
+<div id="register_gpio_12_cfg_detail" class="packet">
+<h2>GPIO_12_CFG </h2>
+<hr/>
+<ul>
+    <li class="note">  Address: <b>[0x2D]</b></li>
+</ul>
+
+<p>Configuration for GPIO 12</p>
+<!--*user-block-gpio_12_cfg-start*-->
+
+<!--*user-block-gpio_12_cfg-end*-->
 <table class="fields" width="80%">
   <tr>
     <th class="smallCell">bit</th>

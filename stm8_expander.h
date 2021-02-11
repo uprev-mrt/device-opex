@@ -28,12 +28,18 @@ typedef struct{
     mrt_regdev_t mRegDev;            //ptr to base register-device 
     mrt_reg_t mGpioIn;               //Input values for gpio 0-15
     mrt_reg_t mGpioOut;              //Output values for gpio 0-15
-    mrt_reg_t mAdc0Val;              //Output of ADC 0
-    mrt_reg_t mAdc1Val;              //Output of ADC 1
-    mrt_reg_t mAdc2Val;              //Output of ADC 2
-    mrt_reg_t mAdc3Val;              //Output of ADC 3
-    mrt_reg_t mAdc4Val;              //Output of ADC 4
-    mrt_reg_t mIrqSrc;               //latching Interrupt source mask
+    mrt_reg_t mAdc0Val;              //Analog value on ADC0
+    mrt_reg_t mAdc1Val;              //Analog value on ADC1
+    mrt_reg_t mAdc2Val;              //Analog value on ADC2
+    mrt_reg_t mAdc3Val;              //Analog value on ADC3
+    mrt_reg_t mAdc4Val;              //Analog value on ADC4
+    mrt_reg_t mPwm0Val;              //PWM value for ch 0
+    mrt_reg_t mPwm1Val;              //PWM value for ch 1
+    mrt_reg_t mPwm2Val;              //PWM value for ch 2
+    mrt_reg_t mPwm3Val;              //PWM value for ch 3
+    mrt_reg_t mPwm4Val;              //PWM value for ch 4
+    mrt_reg_t mPwm5Val;              //PWM value for ch 5
+    mrt_reg_t mIrqSrc;               //latching Interrupt source mask. indicates souce of IRQ resets on read
     mrt_reg_t mGpio0Cfg;             //Configuration for GPIO 0
     mrt_reg_t mGpio1Cfg;             //Configuration for GPIO 1
     mrt_reg_t mGpio2Cfg;             //Configuration for GPIO 2
@@ -46,6 +52,7 @@ typedef struct{
     mrt_reg_t mGpio9Cfg;             //Configuration for GPIO 9
     mrt_reg_t mGpio10Cfg;            //Configuration for GPIO 10
     mrt_reg_t mGpio11Cfg;            //Configuration for GPIO 11
+    mrt_reg_t mGpio12Cfg;            //Configuration for GPIO 12
     mrt_reg_t mAdc0Cfg;              //Configuration for ADC 0
     mrt_reg_t mAdc1Cfg;              //Configuration for ADC 1
     mrt_reg_t mAdc2Cfg;              //Configuration for ADC 2

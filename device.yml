@@ -17,29 +17,40 @@ i2c_addr: 0x42   # defines the I2C device address (if device uses I2C)
 
 registers:             
     
-    - GPIO_IN:         {  type: uint16_t, perm: r, desc: Input values for gpio 0-15}                
-    - GPIO_OUT:        {  type: uint16_t, perm: rw, desc: Output values for gpio 0-15}
-    - ADC_0_VAL:       {  type: uint16_t, perm: r, desc: Output of ADC 0}
-    - ADC_1_VAL:       {  type: uint16_t, perm: r, desc: Output of ADC 1}
-    - ADC_2_VAL:       {  type: uint16_t, perm: r, desc: Output of ADC 2}
-    - ADC_3_VAL:       {  type: uint16_t, perm: r, desc: Output of ADC 3}
-    - ADC_4_VAL:       {  type: uint16_t, perm: r, desc: Output of ADC 4}
+    - GPIO_IN:         { addr: 0x00 , type: uint16_t, perm: r, desc: Input values for gpio 0-15}                
+    - GPIO_OUT:        { addr: 0x02 , type: uint16_t, perm: rw, desc: Output values for gpio 0-15}
+    - ADC_0_VAL:       { addr: 0x06 , type: uint16_t, perm: r, desc: Output of ADC 0}
+    - ADC_1_VAL:       { addr: 0x08 , type: uint16_t, perm: r, desc: Output of ADC 1}
+    - ADC_2_VAL:       { addr: 0x0A , type: uint16_t, perm: r, desc: Output of ADC 2}
+    - ADC_3_VAL:       { addr: 0x0C , type: uint16_t, perm: r, desc: Output of ADC 3}
+    - ADC_4_VAL:       { addr: 0x0E , type: uint16_t, perm: r, desc: Output of ADC 4}
 
-    - IRQ_SRC:      { type: uint16_t, perm: r, desc: latching Interrupt source mask}
+    - IRQ_SRC:      { addr: 0x10, type: uint16_t, perm: r, desc: latching Interrupt source mask}
+
+    - PWM_0_VAL:       { addr: 0x0F , type: uint16_t, perm: w, desc: PWM value for ch 0}
+    - PWM_1_VAL:       { addr: 0x11 , type: uint16_t, perm: w, desc: PWM value for ch 1}
+    - PWM_2_VAL:       { addr: 0x13 , type: uint16_t, perm: w, desc: PWM value for ch 2}
+    - PWM_3_VAL:       { addr: 0x15 , type: uint16_t, perm: w, desc: PWM value for ch 3}
+    - PWM_4_VAL:       { addr: 0x17 , type: uint16_t, perm: w, desc: PWM value for ch 4}
+    - PWM_5_VAL:       { addr: 0x19 , type: uint16_t, perm: w, desc: PWM value for ch 5}
+    #- PWM_6_VAL:       { addr: 0x1B , type: uint16_t, perm: w, desc: PWM value for ch 6}
+    #- PWM_7_VAL:       { addr: 0x1D , type: uint16_t, perm: w, desc: PWM value for ch 7}
+
+    - IRQ_SRC:         { addr: 0x1F, type: uint16_t, perm: r, desc: 'latching Interrupt source mask. indicates souce of IRQ resets on read'}
 
     #Gpio config
-    - GPIO_0_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 0}   
-    - GPIO_1_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 1}   
-    - GPIO_2_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 2}   
-    - GPIO_3_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 3}   
-    - GPIO_4_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 4}   
-    - GPIO_5_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 5}   
-    - GPIO_6_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 6}   
-    - GPIO_7_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 7}   
-    - GPIO_8_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 8}   
-    - GPIO_9_CFG:      {  type: uint8_t, perm: rw, desc: Configuration for GPIO 9}   
-    - GPIO_10_CFG:     {  type: uint8_t, perm: rw, desc: Configuration for GPIO 10}   
-    - GPIO_11_CFG:     {  type: uint8_t, perm: rw, desc: Configuration for GPIO 11}
+    - GPIO_0_CFG:      { addr: 0x20 , type: uint8_t, perm: rw, desc: Configuration for GPIO 0}   
+    - GPIO_1_CFG:      { addr: 0x21 , type: uint8_t, perm: rw, desc: Configuration for GPIO 1}   
+    - GPIO_2_CFG:      { addr: 0x22 , type: uint8_t, perm: rw, desc: Configuration for GPIO 2}   
+    - GPIO_3_CFG:      { addr: 0x23 , type: uint8_t, perm: rw, desc: Configuration for GPIO 3}   
+    - GPIO_4_CFG:      { addr: 0x24 , type: uint8_t, perm: rw, desc: Configuration for GPIO 4}   
+    - GPIO_5_CFG:      { addr: 0x25 , type: uint8_t, perm: rw, desc: Configuration for GPIO 5}   
+    - GPIO_6_CFG:      { addr: 0x26 , type: uint8_t, perm: rw, desc: Configuration for GPIO 6}   
+    - GPIO_7_CFG:      { addr: 0x27 , type: uint8_t, perm: rw, desc: Configuration for GPIO 7}   
+    - GPIO_8_CFG:      { addr: 0x28 , type: uint8_t, perm: rw, desc: Configuration for GPIO 8}   
+    - GPIO_9_CFG:      { addr: 0x29 , type: uint8_t, perm: rw, desc: Configuration for GPIO 9}   
+    - GPIO_10_CFG:     { addr: 0x2A , type: uint8_t, perm: rw, desc: Configuration for GPIO 10}   
+    - GPIO_11_CFG:     { addr: 0x2B , type: uint8_t, perm: rw, desc: Configuration for GPIO 11}
 
     #ADC config
     - ADC_0_CFG:       {  type: uint16_t, perm: rw, desc: Configuration for ADC 0 }
@@ -89,6 +100,14 @@ fields:
     - ADC_2_VAL
     - ADC_3_VAL
     - ADC_4_VAL
+    - PWM_0_VAL
+    - PWM_1_VAL
+    - PWM_2_VAL
+    - PWM_3_VAL
+    - PWM_4_VAL
+    - PWM_5_VAL
+    #- PWM_6_VAL
+    #- PWM_7_VAL
     - IRQ_SRC
     - WHO_AM_I
 
@@ -104,6 +123,10 @@ fields:
     - GPIO_9_CFG: *gpio_cfg
     - GPIO_10_CFG: *gpio_cfg
     - GPIO_11_CFG: *gpio_cfg
+    - GPIO_12_CFG: *gpio_cfg
+    #- GPIO_13_CFG: *gpio_cfg
+    #- GPIO_14_CFG: *gpio_cfg
+    #- GPIO_15_CFG: *gpio_cfg
 
     - ADC_0_CFG: *adc_cfg
     - ADC_1_CFG: *adc_cfg
