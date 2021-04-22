@@ -70,7 +70,7 @@ EEPROM_MEM_            0x3B                 uint8                RW             
 
 
 Registers
-=========
+---------
 
 
 

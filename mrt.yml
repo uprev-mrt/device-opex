@@ -1,3 +1,5 @@
 ---
-!include device.yml
+name: STM8-Expander
+category: Device/IO
+description: Driver for STM8 running custom GPIO expander firmware 
 requires: [RegDevice]
