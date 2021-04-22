@@ -31,32 +31,38 @@ Name                    Address             Type                  Access        
 =================     ================     ================     ================     ================     ================
 GPIO_IN_               0x00                 uint16               R                    0x0000               Input values for gpio 0-15
 GPIO_OUT_              0x02                 uint16               RW                   0x0000               Output values for gpio 0-15
-ADC_0_VAL_             0x04                 uint16               R                    0x0000               Output of ADC 0      
-ADC_1_VAL_             0x06                 uint16               R                    0x0000               Output of ADC 1      
-ADC_2_VAL_             0x08                 uint16               R                    0x0000               Output of ADC 2      
-ADC_3_VAL_             0x0A                 uint16               R                    0x0000               Output of ADC 3      
-ADC_4_VAL_             0x0C                 uint16               R                    0x0000               Output of ADC 4      
-IRQ_SRC_               0x0E                 uint16               R                    0x0000               latching Interrupt source mask
-GPIO_0_CFG_            0x10                 uint8                RW                   0x00                 Configuration for GPIO 0
-GPIO_1_CFG_            0x11                 uint8                RW                   0x00                 Configuration for GPIO 1
-GPIO_2_CFG_            0x12                 uint8                RW                   0x00                 Configuration for GPIO 2
-GPIO_3_CFG_            0x13                 uint8                RW                   0x00                 Configuration for GPIO 3
-GPIO_4_CFG_            0x14                 uint8                RW                   0x00                 Configuration for GPIO 4
-GPIO_5_CFG_            0x15                 uint8                RW                   0x00                 Configuration for GPIO 5
-GPIO_6_CFG_            0x16                 uint8                RW                   0x00                 Configuration for GPIO 6
-GPIO_7_CFG_            0x17                 uint8                RW                   0x00                 Configuration for GPIO 7
-GPIO_8_CFG_            0x18                 uint8                RW                   0x00                 Configuration for GPIO 8
-GPIO_9_CFG_            0x19                 uint8                RW                   0x00                 Configuration for GPIO 9
-GPIO_10_CFG_           0x1A                 uint8                RW                   0x00                 Configuration for GPIO 10
-GPIO_11_CFG_           0x1B                 uint8                RW                   0x00                 Configuration for GPIO 11
-ADC_0_CFG_             0x1C                 uint16               RW                   0x0000               Configuration for ADC 0
-ADC_1_CFG_             0x1E                 uint16               RW                   0x0000               Configuration for ADC 1
-ADC_2_CFG_             0x20                 uint16               RW                   0x0000               Configuration for ADC 2
-ADC_3_CFG_             0x22                 uint16               RW                   0x0000               Configuration for ADC 3
-ADC_4_CFG_             0x24                 uint16               RW                   0x0000               Configuration for ADC 4
-PWM_CONFIG_            0x26                 uint32               RW                   0x00000000           Configuration for PWM
-WHO_AM_I_              0x2A                 uint8                RW                   0xAB                 Device ID            
-EEPROM_MEM_            0x2B                 uint8                RW                   0x00                 Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address
+ADC_0_VAL_             0x06                 uint16               R                    0x0000               Output of ADC 0      
+ADC_1_VAL_             0x08                 uint16               R                    0x0000               Output of ADC 1      
+ADC_2_VAL_             0x0A                 uint16               R                    0x0000               Output of ADC 2      
+ADC_3_VAL_             0x0C                 uint16               R                    0x0000               Output of ADC 3      
+ADC_4_VAL_             0x0E                 uint16               R                    0x0000               Output of ADC 4      
+IRQ_SRC_               0x1F                 uint16               R                    0x0000               latching Interrupt source mask. indicates souce of IRQ resets on read
+PWM_0_VAL_             0x0F                 uint16               W                    0x0000               PWM value for ch 0   
+PWM_1_VAL_             0x11                 uint16               W                    0x0000               PWM value for ch 1   
+PWM_2_VAL_             0x13                 uint16               W                    0x0000               PWM value for ch 2   
+PWM_3_VAL_             0x15                 uint16               W                    0x0000               PWM value for ch 3   
+PWM_4_VAL_             0x17                 uint16               W                    0x0000               PWM value for ch 4   
+PWM_5_VAL_             0x19                 uint16               W                    0x0000               PWM value for ch 5   
+GPIO_0_CFG_            0x20                 uint8                RW                   0x00                 Configuration for GPIO 0
+GPIO_1_CFG_            0x21                 uint8                RW                   0x00                 Configuration for GPIO 1
+GPIO_2_CFG_            0x22                 uint8                RW                   0x00                 Configuration for GPIO 2
+GPIO_3_CFG_            0x23                 uint8                RW                   0x00                 Configuration for GPIO 3
+GPIO_4_CFG_            0x24                 uint8                RW                   0x00                 Configuration for GPIO 4
+GPIO_5_CFG_            0x25                 uint8                RW                   0x00                 Configuration for GPIO 5
+GPIO_6_CFG_            0x26                 uint8                RW                   0x00                 Configuration for GPIO 6
+GPIO_7_CFG_            0x27                 uint8                RW                   0x00                 Configuration for GPIO 7
+GPIO_8_CFG_            0x28                 uint8                RW                   0x00                 Configuration for GPIO 8
+GPIO_9_CFG_            0x29                 uint8                RW                   0x00                 Configuration for GPIO 9
+GPIO_10_CFG_           0x2A                 uint8                RW                   0x00                 Configuration for GPIO 10
+GPIO_11_CFG_           0x2B                 uint8                RW                   0x00                 Configuration for GPIO 11
+ADC_0_CFG_             0x2C                 uint16               RW                   0x0000               Configuration for ADC 0
+ADC_1_CFG_             0x2E                 uint16               RW                   0x0000               Configuration for ADC 1
+ADC_2_CFG_             0x30                 uint16               RW                   0x0000               Configuration for ADC 2
+ADC_3_CFG_             0x32                 uint16               RW                   0x0000               Configuration for ADC 3
+ADC_4_CFG_             0x34                 uint16               RW                   0x0000               Configuration for ADC 4
+PWM_CONFIG_            0x36                 uint32               RW                   0x00000000           Configuration for PWM
+WHO_AM_I_              0x3A                 uint8                RW                   0xAB                 Device ID            
+EEPROM_MEM_            0x3B                 uint8                RW                   0x00                 Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address
 =================     ================     ================     ================     ================     ================
 
 
@@ -135,7 +141,7 @@ Fields
 ADC_0_VAL
 ---------
 
-:Address: **[0x04]**
+:Address: **[0x06]**
 
 Output of ADC 0
 
@@ -164,7 +170,7 @@ Fields
 ADC_1_VAL
 ---------
 
-:Address: **[0x06]**
+:Address: **[0x08]**
 
 Output of ADC 1
 
@@ -193,7 +199,7 @@ Fields
 ADC_2_VAL
 ---------
 
-:Address: **[0x08]**
+:Address: **[0x0A]**
 
 Output of ADC 2
 
@@ -222,7 +228,7 @@ Fields
 ADC_3_VAL
 ---------
 
-:Address: **[0x0A]**
+:Address: **[0x0C]**
 
 Output of ADC 3
 
@@ -251,7 +257,7 @@ Fields
 ADC_4_VAL
 ---------
 
-:Address: **[0x0C]**
+:Address: **[0x0E]**
 
 Output of ADC 4
 
@@ -280,9 +286,9 @@ Fields
 IRQ_SRC
 -------
 
-:Address: **[0x0E]**
+:Address: **[0x1F]**
 
-latching Interrupt source mask
+latching Interrupt source mask. indicates souce of IRQ resets on read
 
 .. *user-block-irq_src-start*
 
@@ -298,7 +304,181 @@ latching Interrupt source mask
 Fields
 ~~~~~~
 
-:IRQ_SRC: latching Interrupt source mask
+:IRQ_SRC: latching Interrupt source mask. indicates souce of IRQ resets on read
+
+
+
+----------
+
+.. _PWM_0_VAL:
+
+PWM_0_VAL
+---------
+
+:Address: **[0x0F]**
+
+PWM value for ch 0
+
+.. *user-block-pwm_0_val-start*
+
+.. *user-block-pwm_0_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_0_VAL: PWM value for ch 0
+
+
+
+----------
+
+.. _PWM_1_VAL:
+
+PWM_1_VAL
+---------
+
+:Address: **[0x11]**
+
+PWM value for ch 1
+
+.. *user-block-pwm_1_val-start*
+
+.. *user-block-pwm_1_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_1_VAL: PWM value for ch 1
+
+
+
+----------
+
+.. _PWM_2_VAL:
+
+PWM_2_VAL
+---------
+
+:Address: **[0x13]**
+
+PWM value for ch 2
+
+.. *user-block-pwm_2_val-start*
+
+.. *user-block-pwm_2_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_2_VAL: PWM value for ch 2
+
+
+
+----------
+
+.. _PWM_3_VAL:
+
+PWM_3_VAL
+---------
+
+:Address: **[0x15]**
+
+PWM value for ch 3
+
+.. *user-block-pwm_3_val-start*
+
+.. *user-block-pwm_3_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_3_VAL: PWM value for ch 3
+
+
+
+----------
+
+.. _PWM_4_VAL:
+
+PWM_4_VAL
+---------
+
+:Address: **[0x17]**
+
+PWM value for ch 4
+
+.. *user-block-pwm_4_val-start*
+
+.. *user-block-pwm_4_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_4_VAL: PWM value for ch 4
+
+
+
+----------
+
+.. _PWM_5_VAL:
+
+PWM_5_VAL
+---------
+
+:Address: **[0x19]**
+
+PWM value for ch 5
+
+.. *user-block-pwm_5_val-start*
+
+.. *user-block-pwm_5_val-end*
+
++------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+|Bit         |15       |14       |13       |12       |11       |10       |9        |8        |7        |6        |5        |4        |3        |2        |1        |0        |
++============+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+=========+
+| **Field**  |                                                                                                                                                               |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Fields
+~~~~~~
+
+:PWM_5_VAL: PWM value for ch 5
 
 
 
@@ -309,7 +489,7 @@ Fields
 GPIO_0_CFG
 ----------
 
-:Address: **[0x10]**
+:Address: **[0x20]**
 
 Configuration for GPIO 0
 
@@ -355,7 +535,7 @@ ANY                         b11                     Trigger on any
 GPIO_1_CFG
 ----------
 
-:Address: **[0x11]**
+:Address: **[0x21]**
 
 Configuration for GPIO 1
 
@@ -401,7 +581,7 @@ ANY                         b11                     Trigger on any
 GPIO_2_CFG
 ----------
 
-:Address: **[0x12]**
+:Address: **[0x22]**
 
 Configuration for GPIO 2
 
@@ -447,7 +627,7 @@ ANY                         b11                     Trigger on any
 GPIO_3_CFG
 ----------
 
-:Address: **[0x13]**
+:Address: **[0x23]**
 
 Configuration for GPIO 3
 
@@ -493,7 +673,7 @@ ANY                         b11                     Trigger on any
 GPIO_4_CFG
 ----------
 
-:Address: **[0x14]**
+:Address: **[0x24]**
 
 Configuration for GPIO 4
 
@@ -539,7 +719,7 @@ ANY                         b11                     Trigger on any
 GPIO_5_CFG
 ----------
 
-:Address: **[0x15]**
+:Address: **[0x25]**
 
 Configuration for GPIO 5
 
@@ -585,7 +765,7 @@ ANY                         b11                     Trigger on any
 GPIO_6_CFG
 ----------
 
-:Address: **[0x16]**
+:Address: **[0x26]**
 
 Configuration for GPIO 6
 
@@ -631,7 +811,7 @@ ANY                         b11                     Trigger on any
 GPIO_7_CFG
 ----------
 
-:Address: **[0x17]**
+:Address: **[0x27]**
 
 Configuration for GPIO 7
 
@@ -677,7 +857,7 @@ ANY                         b11                     Trigger on any
 GPIO_8_CFG
 ----------
 
-:Address: **[0x18]**
+:Address: **[0x28]**
 
 Configuration for GPIO 8
 
@@ -723,7 +903,7 @@ ANY                         b11                     Trigger on any
 GPIO_9_CFG
 ----------
 
-:Address: **[0x19]**
+:Address: **[0x29]**
 
 Configuration for GPIO 9
 
@@ -769,7 +949,7 @@ ANY                         b11                     Trigger on any
 GPIO_10_CFG
 -----------
 
-:Address: **[0x1A]**
+:Address: **[0x2A]**
 
 Configuration for GPIO 10
 
@@ -815,7 +995,7 @@ ANY                         b11                     Trigger on any
 GPIO_11_CFG
 -----------
 
-:Address: **[0x1B]**
+:Address: **[0x2B]**
 
 Configuration for GPIO 11
 
@@ -861,7 +1041,7 @@ ANY                         b11                     Trigger on any
 ADC_0_CFG
 ---------
 
-:Address: **[0x1C]**
+:Address: **[0x2C]**
 
 Configuration for ADC 0
 
@@ -907,7 +1087,7 @@ ANY                         b11                     Trigger on any
 ADC_1_CFG
 ---------
 
-:Address: **[0x1E]**
+:Address: **[0x2E]**
 
 Configuration for ADC 1
 
@@ -953,7 +1133,7 @@ ANY                         b11                     Trigger on any
 ADC_2_CFG
 ---------
 
-:Address: **[0x20]**
+:Address: **[0x30]**
 
 Configuration for ADC 2
 
@@ -999,7 +1179,7 @@ ANY                         b11                     Trigger on any
 ADC_3_CFG
 ---------
 
-:Address: **[0x22]**
+:Address: **[0x32]**
 
 Configuration for ADC 3
 
@@ -1045,7 +1225,7 @@ ANY                         b11                     Trigger on any
 ADC_4_CFG
 ---------
 
-:Address: **[0x24]**
+:Address: **[0x34]**
 
 Configuration for ADC 4
 
@@ -1091,7 +1271,7 @@ ANY                         b11                     Trigger on any
 PWM_CONFIG
 ----------
 
-:Address: **[0x26]**
+:Address: **[0x36]**
 
 Configuration for PWM
 
@@ -1156,7 +1336,7 @@ PRESCALER_32768             b1111                   divide clock by 32768 ()
 WHO_AM_I
 --------
 
-:Address: **[0x2A]**
+:Address: **[0x3A]**
 :Default: **[0xAB]**
 
 Device ID
@@ -1186,7 +1366,7 @@ Fields
 EEPROM_MEM
 ----------
 
-:Address: **[0x2B]**
+:Address: **[0x3B]**
 
 Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address
 

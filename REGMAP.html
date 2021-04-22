@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>STM8_EXPANDER Device</title>
+</head>
+<body>
+<div class="content">
+<h1>STM8_EXPANDER Device</h1>
+<ul>
+  <li> Generated with <a href="https://github.com/uprev-mrt/mrtutils/wiki/mrt-device">MrT Device Utility</a> </li>
+  <li> Bus:  I2C, SPI</li>
+  <li>Datasheet: <a href="https://www.st.com/resource/en/datasheet/stm8s003f3.pdf">https://www.st.com/resou...</a> </li>
+  <li> DigiKey: <a href="https://www.digikey.com/products/en?KeyWords=497-18052-2-ND">497-18052-2-ND</a></li>
+  <li> I2C Address: 0x42</li>
+</ul>
+<hr/>
+<h2>Description: </h2>
+<p>Driver for STM8 running custom GPIO expander firmware</p>
+<!--*user-block-description-start*-->
+
+<!--*user-block-description-end*-->
+
+<br/>
+
+<div class="regmap" align="center">
+<hr class="section">
+<h2 class="right"> Register Map</h2>
+<div align="right" width="100%">
+  Configuration:
+  <select id="cfgSelect" onchange="setConfig(this)"> 
+    <option value="none">None</option>
+  </select>
+</div>
+<hr class="thick">
+
+
+  <table class="fields" id="regMap" width="95%">
+
+  </table>
+</div>
+
+
+</div>
+<script>
+  
+  var device = {"name": "stm8_expander", "regs": {"GPIO_IN": {"name": "GPIO_IN", "addr": 0, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Input values for gpio 0-15", "fields": {"GPIO_IN": {"mask": 65535, "size": 16, "offset": 0, "desc": "Input values for gpio 0-15", "vals": []}}}, "GPIO_OUT": {"name": "GPIO_OUT", "addr": 2, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Output values for gpio 0-15", "fields": {"GPIO_OUT": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output values for gpio 0-15", "vals": []}}}, "ADC_0_VAL": {"name": "ADC_0_VAL", "addr": 6, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Output of ADC 0", "fields": {"ADC_0_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output of ADC 0", "vals": []}}}, "ADC_1_VAL": {"name": "ADC_1_VAL", "addr": 8, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Output of ADC 1", "fields": {"ADC_1_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output of ADC 1", "vals": []}}}, "ADC_2_VAL": {"name": "ADC_2_VAL", "addr": 10, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Output of ADC 2", "fields": {"ADC_2_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output of ADC 2", "vals": []}}}, "ADC_3_VAL": {"name": "ADC_3_VAL", "addr": 12, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Output of ADC 3", "fields": {"ADC_3_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output of ADC 3", "vals": []}}}, "ADC_4_VAL": {"name": "ADC_4_VAL", "addr": 14, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "Output of ADC 4", "fields": {"ADC_4_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "Output of ADC 4", "vals": []}}}, "IRQ_SRC": {"name": "IRQ_SRC", "addr": 31, "type": "uint16", "size": 16, "perm": "R", "default": 0, "hasDefault": false, "desc": "latching Interrupt source mask. indicates souce of IRQ resets on read", "fields": {"IRQ_SRC": {"mask": 65535, "size": 16, "offset": 0, "desc": "latching Interrupt source mask. indicates souce of IRQ resets on read", "vals": []}}}, "PWM_0_VAL": {"name": "PWM_0_VAL", "addr": 15, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 0", "fields": {"PWM_0_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 0", "vals": []}}}, "PWM_1_VAL": {"name": "PWM_1_VAL", "addr": 17, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 1", "fields": {"PWM_1_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 1", "vals": []}}}, "PWM_2_VAL": {"name": "PWM_2_VAL", "addr": 19, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 2", "fields": {"PWM_2_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 2", "vals": []}}}, "PWM_3_VAL": {"name": "PWM_3_VAL", "addr": 21, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 3", "fields": {"PWM_3_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 3", "vals": []}}}, "PWM_4_VAL": {"name": "PWM_4_VAL", "addr": 23, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 4", "fields": {"PWM_4_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 4", "vals": []}}}, "PWM_5_VAL": {"name": "PWM_5_VAL", "addr": 25, "type": "uint16", "size": 16, "perm": "W", "default": 0, "hasDefault": false, "desc": "PWM value for ch 5", "fields": {"PWM_5_VAL": {"mask": 65535, "size": 16, "offset": 0, "desc": "PWM value for ch 5", "vals": []}}}, "GPIO_0_CFG": {"name": "GPIO_0_CFG", "addr": 32, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 0", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_1_CFG": {"name": "GPIO_1_CFG", "addr": 33, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 1", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_2_CFG": {"name": "GPIO_2_CFG", "addr": 34, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 2", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_3_CFG": {"name": "GPIO_3_CFG", "addr": 35, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 3", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_4_CFG": {"name": "GPIO_4_CFG", "addr": 36, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 4", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_5_CFG": {"name": "GPIO_5_CFG", "addr": 37, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 5", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_6_CFG": {"name": "GPIO_6_CFG", "addr": 38, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 6", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_7_CFG": {"name": "GPIO_7_CFG", "addr": 39, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 7", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_8_CFG": {"name": "GPIO_8_CFG", "addr": 40, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 8", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_9_CFG": {"name": "GPIO_9_CFG", "addr": 41, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 9", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_10_CFG": {"name": "GPIO_10_CFG", "addr": 42, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 10", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "GPIO_11_CFG": {"name": "GPIO_11_CFG", "addr": 43, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for GPIO 11", "fields": {"DIR": {"mask": 128, "size": 1, "offset": 7, "desc": "Pin Direction", "vals": [{"name": "IN", "val": 0, "desc": "GPIO is an input"}, {"name": "OUT", "val": 1, "desc": "GPIO is an output"}]}, "PP": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables Push/Pull, Otherwise pin is OpenDrain/floating", "vals": []}, "IRQ": {"mask": 48, "size": 2, "offset": 4, "desc": "Interrupt selection", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "ALT": {"mask": 8, "size": 1, "offset": 3, "desc": "Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc)", "vals": []}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables GPIO", "vals": []}}}, "ADC_0_CFG": {"name": "ADC_0_CFG", "addr": 44, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for ADC 0", "fields": {"Treshold": {"mask": 65520, "size": 12, "offset": 4, "desc": "IRQ threshold for ADC channel", "vals": []}, "IRQ": {"mask": 12, "size": 2, "offset": 2, "desc": "Interrupt setting for ADC channel", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables ADC Channel", "vals": []}}}, "ADC_1_CFG": {"name": "ADC_1_CFG", "addr": 46, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for ADC 1", "fields": {"Treshold": {"mask": 65520, "size": 12, "offset": 4, "desc": "IRQ threshold for ADC channel", "vals": []}, "IRQ": {"mask": 12, "size": 2, "offset": 2, "desc": "Interrupt setting for ADC channel", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables ADC Channel", "vals": []}}}, "ADC_2_CFG": {"name": "ADC_2_CFG", "addr": 48, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for ADC 2", "fields": {"Treshold": {"mask": 65520, "size": 12, "offset": 4, "desc": "IRQ threshold for ADC channel", "vals": []}, "IRQ": {"mask": 12, "size": 2, "offset": 2, "desc": "Interrupt setting for ADC channel", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables ADC Channel", "vals": []}}}, "ADC_3_CFG": {"name": "ADC_3_CFG", "addr": 50, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for ADC 3", "fields": {"Treshold": {"mask": 65520, "size": 12, "offset": 4, "desc": "IRQ threshold for ADC channel", "vals": []}, "IRQ": {"mask": 12, "size": 2, "offset": 2, "desc": "Interrupt setting for ADC channel", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables ADC Channel", "vals": []}}}, "ADC_4_CFG": {"name": "ADC_4_CFG", "addr": 52, "type": "uint16", "size": 16, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for ADC 4", "fields": {"Treshold": {"mask": 65520, "size": 12, "offset": 4, "desc": "IRQ threshold for ADC channel", "vals": []}, "IRQ": {"mask": 12, "size": 2, "offset": 2, "desc": "Interrupt setting for ADC channel", "vals": [{"name": "NONE", "val": 0, "desc": "No interrupt"}, {"name": "RISING", "val": 1, "desc": "Trigger on Rising"}, {"name": "FALLING", "val": 2, "desc": "Trigger on falling"}, {"name": "ANY", "val": 3, "desc": "Trigger on any"}]}, "EN": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables ADC Channel", "vals": []}}}, "PWM_CONFIG": {"name": "PWM_CONFIG", "addr": 54, "type": "uint32", "size": 32, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Configuration for PWM", "fields": {"Period": {"mask": 4294901760, "size": 16, "offset": 16, "desc": "Period for PWM signals", "vals": []}, "Prescaler": {"mask": 61440, "size": 4, "offset": 12, "desc": "Prescaler for PWM, using 16Mhz clock", "vals": [{"name": "PRESCALER_1", "val": 0, "desc": "divide clock by 1 (16Mhz)"}, {"name": "PRESCALER_2", "val": 1, "desc": "divide clock by 2 (8Mhz)"}, {"name": "PRESCALER_4", "val": 2, "desc": "divide clock by 4  (4Mhz)"}, {"name": "PRESCALER_8", "val": 3, "desc": "divide clock by 8  (2Mhz)"}, {"name": "PRESCALER_16", "val": 4, "desc": "divide clock by 16  (1Mhz)"}, {"name": "PRESCALER_32", "val": 5, "desc": "divide clock by 32  (500Khz)"}, {"name": "PRESCALER_64", "val": 6, "desc": "divide clock by 64  (250Khz)"}, {"name": "PRESCALER_128", "val": 7, "desc": "divide clock by 128 (125Khz)"}, {"name": "PRESCALER_256", "val": 8, "desc": "divide clock by 256 (62.5 Khz)"}, {"name": "PRESCALER_512", "val": 9, "desc": "divide clock by 512  (31.25 Khz)"}, {"name": "PRESCALER_1024", "val": 10, "desc": "divide clock by 1024 (1.5625 KHz)"}, {"name": "PRESCALER_2048", "val": 11, "desc": "divide clock by 2048  ()"}, {"name": "PRESCALER_4096", "val": 12, "desc": "divide clock by 4096  ()"}, {"name": "PRESCALER_8192", "val": 13, "desc": "divide clock by 8192  ()"}, {"name": "PRESCALER_16384", "val": 14, "desc": "divide clock by 16384 ()"}, {"name": "PRESCALER_32768", "val": 15, "desc": "divide clock by 32768 ()"}]}, "CH0_Enable": {"mask": 1, "size": 1, "offset": 0, "desc": "Enables PWM channel 0", "vals": []}, "CH1_Enable": {"mask": 2, "size": 1, "offset": 1, "desc": "Enables PWM channel 1", "vals": []}, "CH2_Enable": {"mask": 4, "size": 1, "offset": 2, "desc": "Enables PWM channel 2", "vals": []}, "CH3_Enable": {"mask": 8, "size": 1, "offset": 3, "desc": "Enables PWM channel 3", "vals": []}, "CH4_Enable": {"mask": 16, "size": 1, "offset": 4, "desc": "Enables PWM channel 4", "vals": []}, "CH5_Enable": {"mask": 32, "size": 1, "offset": 5, "desc": "Enables PWM channel 5", "vals": []}, "CH6_Enable": {"mask": 64, "size": 1, "offset": 6, "desc": "Enables PWM channel 6", "vals": []}, "CH7_Enable": {"mask": 128, "size": 1, "offset": 7, "desc": "Enables PWM channel 7", "vals": []}}}, "WHO_AM_I": {"name": "WHO_AM_I", "addr": 58, "type": "uint8", "size": 8, "perm": "RW", "default": 171, "hasDefault": true, "desc": "Device ID", "fields": {"WHO_AM_I": {"mask": 255, "size": 8, "offset": 0, "desc": "Device ID", "vals": []}}}, "EEPROM_MEM": {"name": "EEPROM_MEM", "addr": 59, "type": "uint8", "size": 8, "perm": "RW", "default": 0, "hasDefault": false, "desc": "Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address", "fields": {}}}, "configs": {"Default": {"WHO_AM_I": 171}}, "currentVals": {"WHO_AM_I": 171}, "smallestReg": 8, "largestReg": 32};
+
+  var sel =  document.getElementById("cfgSelect");
+
+  for(var k in device.configs){
+    var option = document.createElement("option");
+    option.text = k;
+    option.Value = k;
+    sel.add(option);
+  }
+
+  function checkBit(reg, bit)
+{
+  let resp = {
+    field: {},
+    len: 0,
+    cont : false
+  };
+
+  let next = 1000;
+  bit -=1
+  for(let name in reg.fields)
+  {
+    let field = reg.fields[name];
+    let start = field.offset + (field.size -1);
+    let end = field.offset;
+
+    if(bit == start) //we are at the start of the field 
+    {
+      field.name = name;
+      resp.field = field;
+      field.remaining = field.size;
+      resp.len = field.size;
+      resp.cont = false;
+      return resp;
+    }
+    else if( (bit < start) && (bit >= end)) //we are mid-field
+    {
+      field.name = name;
+      resp.field = field;
+      resp.len = field.remaining;
+      resp.cont = true;
+      return resp;
+    }
+
+    if( (bit > start) && ((bit - start ) < next))
+      next = bit - start;
+  }
+
+  resp.len = next;
+  resp.field = null;
+  return resp;
+}
+
+
+function buildRegMap(tableId, dev)
+{
+
+  let table = document.getElementById(tableId);
+
+  let head = table.insertRow();
+
+  let headcell = document.createElement("th");
+  headcell.textContent = "Register";
+  headcell.setAttribute("width", "10%");
+  head.appendChild(headcell);
+  headcell = document.createElement("th");
+  headcell.textContent ="Addr";
+  headcell.setAttribute("width", "4%");
+  head.appendChild(headcell);
+  headcell = document.createElement("th");
+  headcell.textContent ="RW";
+  headcell.setAttribute("width", "3%");
+  head.appendChild(headcell);
+  let cellWidth = 83 / dev.smallestReg;
+  for(var n = dev.smallestReg; n > 0; n--)
+  {
+    headcell = document.createElement("th");
+    headcell.textContent = (n -1).toString();
+    headcell.setAttribute("width", cellWidth.toString() + "%");
+    head.appendChild(headcell);
+  }
+
+  for(let name in dev.regs)
+  {
+    let reg = dev.regs[name];
+    let rowSpan = reg.size / dev.smallestReg;
+    let row = table.insertRow();
+    let bit = reg.size;
+
+    let head = document.createElement("th");
+    let access = document.createElement("th");
+    let regAddr = document.createElement("th");
+    let headAnch = document.createElement("a");
+    headAnch.textContent = reg.name
+    head.setAttribute("rowspan",rowSpan);
+    regAddr.textContent = "x"+reg.addr.toString(16).padStart(4,"0")
+    regAddr.setAttribute("rowspan", rowSpan);
+    access.textContent =reg.perm;
+    access.setAttribute("rowspan",rowSpan);
+    headAnch.setAttribute("data-tt",'');
+    headAnch.setAttribute("data-tt-lbl", reg.name +"\n\n" +reg.desc );
+
+    head.appendChild(headAnch);
+    row.appendChild(head);
+    row.appendChild(regAddr);
+    row.appendChild(access);
+
+    let count = 0;
+
+    while(bit > 0)
+    {
+      var i = dev.smallestReg;
+      while( i > 0)
+      {
+        let resp = checkBit(reg, bit);
+        if(resp.len > (i))
+          resp.len = i;
+
+        let cell = document.createElement("td");
+
+        if(resp.field != null)
+        {
+          resp.field.remaining = resp.field.remaining - resp.len;
+          cell.classList.add("bit");
+          cell.setAttribute("id", reg.name + "_bit_"+ (bit -1).toString());
+          let fieldName = resp.field.name;
+          if(resp.len == 1)
+          {
+            fieldName = fieldName.substring(0,5) + "..";
+          }
+
+          let fieldDiv = document.createElement("div");
+          fieldDiv.classList.add("field");
+          fieldDiv.setAttribute("style", "margin-right:-" + ((resp.len -1) * 100).toString() +"%;");
+
+          let fieldAnch = document.createElement("a");
+
+          if( !resp.cont) //this is a new field starting
+          {
+            cell.classList.add("first");
+            fieldAnch.textContent = fieldName
+            if(resp.field.size > resp.len)
+              fieldAnch.textContent +="[" + (resp.field.size -1).toString() +":" + (resp.field.size - resp.len).toString() +"]";
+          }
+          else 
+          {
+            fieldAnch.textContent = resp.field.name 
+            if(resp.field.size > resp.len)
+              fieldAnch.textContent += "[" + ( resp.len -1).toString() +":" + (0).toString() +"]";
+          }
+
+          fieldAnch.setAttribute("data-tt",'');
+          fieldAnch.setAttribute("data-tt-lbl", resp.field.name +"\n\n" +resp.field.desc );
+          let valStr ="\n";
+          resp.field.vals.forEach(val => {
+            valStr+= "b"+val.val.toString(2).padStart(resp.field.size,"0") + " : " + val.desc +"\n";
+          });
+          fieldAnch.setAttribute("data-tt-msg", valStr);
+
+          fieldDiv.appendChild(fieldAnch);
+          cell.appendChild(fieldDiv);
+          row.appendChild(cell);
+
+          for(var a =1 ; a < (resp.len); a++)
+          {
+            cell = document.createElement("td");
+            cell.classList.add("bit");
+            cell.setAttribute("id", name + "_bit_"+ (bit -(a+1)).toString());
+            row.appendChild(cell);
+          }
+
+        }
+        else
+        {
+          cell.classList.add("empty");
+          cell.setAttribute("colspan", resp.len);
+          cell.textContent=".";
+          row.appendChild(cell);
+        }
+
+        i -= resp.len;
+        bit-= resp.len;
+      }
+      if(bit > 0 )
+        row = table.insertRow();
+    }
+  }
+}
+  
+function showSettings(){
+    for(var k in device.currentVals){
+      var v = device.currentVals[k];
+      var bit = device.largestReg - 1; //0 based
+      var mask =0;
+      while(bit >= 0)
+      {
+        mask = (v >> bit) & 1;
+        var element = document.getElementById(k + "_bit_" + bit);
+        
+        if(element)
+        {
+          if(mask)
+          {
+            element.classList.add("one");
+            element.classList.remove("zero");
+          }
+          else
+          {
+            element.classList.remove("one");
+            element.classList.add("zero");
+          }
+
+        }
+
+        bit--;
+      }
+
+    }
+  }
+
+
+  function loadConfig(config)
+  {
+    if(config == 'none')
+    {
+      var bits = document.getElementsByClassName("bit");
+      for(var i = 0; i < bits.length; i++)
+      {
+        bits[i].classList.remove("one");
+        bits[i].classList.remove("zero");
+      }
+
+    }
+    else
+    {
+      //first load defaults 
+      for(var k in device.configs['Default'])
+      {
+        device.currentVals[k] = device.configs['Default'][k];
+      }
+
+      for(var k in device.configs[config])
+      {
+        device.currentVals[k] = device.configs[config][k];
+      }
+
+      showSettings();
+    }
+
+  }
+
+  function setConfig(selectObj)
+  {
+    var value = selectObj.value;
+    loadConfig(value);
+  }
+
+
+  buildRegMap("regMap", device);
+
+</script>
+</body>
+<style>
+table.fixed { table-layout:auto; }
+table.fixed td { overflow:visible; }
+
+table.fields{
+  table-layout:fixed;
+}
+
+body {
+  padding:0;
+}
+
+.content{
+  padding-top: 0;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: #fff;
+}
+
+@media print {
+  .regmap {
+    page-break-inside: avoid;
+  }
+  .content{
+    width: 100%;
+  }
+  body{
+    background-color: #fff;
+  }
+}
+
+@media screen {
+  .content{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding-top: 4px;
+    box-shadow: 5px 10px #AAA;
+    padding-bottom: 50px;
+  }
+
+  body{
+    background-color: #ccc;
+    padding: 0;
+  }
+}
+
+html *{
+  font-size: 1em ;
+   color: #000 ;
+  font-family: Arial ;
+}
+
+hr.section {
+  border-style: solid;
+  border-width: 2px;
+  opacity: 1;
+}
+
+
+hr.thick {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #94b2d3;
+  opacity: 1;
+}
+
+hr {
+  opacity: 0.5;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+td {
+  border: 1px solid #000000;
+  text-align: left;
+  padding-top: 6px;
+  vertical-align: top;
+  font-size: 9pt;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.field{
+  text-align: center;
+  padding: 0px;
+  font-weight: bold; 
+}
+
+
+.bit{
+  border-right: 1px dotted #999;
+  border-left: 1px dotted #999;
+  overflow:visible;
+}
+
+.bit.first{
+  border-left: 1px solid black;
+}
+
+td:last-child{
+  border-right: 1px solid black;
+}
+td:first-child{
+  border-left: 1px solid black;
+}
+
+
+td.one{
+  background-color: #acdbac;
+}
+
+td.zero{
+  background-color: #e2af9e;
+}
+
+
+td.empty{
+  background-color: #cccccc;
+  color: #cccccc;
+}
+
+
+
+.desc{
+  font-size: 1.2em;
+}
+
+th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 5px;
+  background-color: #94b2d3;
+  font-size: 9pt;
+}
+
+li.val{
+  opacity: 0.6;
+}
+
+h1{
+  font-size: 2.0em;
+}
+
+h2 
+{
+  font-size: 1.3em;
+}
+
+h2.right{
+  text-align: center;
+  font-size: 1.3em;
+}
+
+h3
+{
+  font-size: 1.8em;
+  color: #003366;
+}
+
+h4 
+{
+  font-size: 1.1em;
+  color: #003366;
+}
+
+
+.note{
+  font-style: italic;
+  opacity: 0.6;
+}
+
+a{
+  text-decoration:none;
+}
+
+a:link {
+  color: blue;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+table.fixed tr td:last-child{
+    width:1%;
+    white-space:nowrap;
+}
+
+[data-tt] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tt]:before,
+[data-tt]:after {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+[data-tt]:before {
+  border-bottom: .6em solid #09f;
+  border-bottom: .6em solid rgba(0,153,255,0.8);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  content: "";
+  left: 20px;
+  margin-top: 1em;
+}
+
+[data-tt]:after {
+  background-color: #387aa7;
+  background-color: rgb(162, 197, 221);
+  border: 2px solid #000000;
+  border: 2px solid rgba(0, 0, 0, 1);
+  border-radius: 2px;
+  color: #000000;
+  content: attr(data-tt-lbl) "\A" attr(data-tt-msg);
+  left: 0;
+  width: 300px;
+  overflow: auto;
+  text-align: left;
+  margin-top: 1.5em;
+  padding: 5px 15px;
+  white-space: pre-wrap;
+  z-index: 100;
+}
+
+[data-tt]:hover:after,
+[data-tt]:hover:before {
+  display: block;
+  overflow: auto;
+}
+
+</style>
+</html>

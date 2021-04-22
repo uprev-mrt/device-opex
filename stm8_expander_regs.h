@@ -8,7 +8,7 @@
 
 #define STM8_EXPANDER_I2C_ADDRESS 0x42
 #define STM8_EXPANDER_REG_ADDR_SIZE 1
-#define STM8_EXPANDER_REG_COUNT 28
+#define STM8_EXPANDER_REG_COUNT 34
 
 
 /*******************************************************************************
@@ -22,7 +22,13 @@
 #define IO_REG_ADC_2_VAL_ADDR                                      0x0A /* Output of ADC 2 */
 #define IO_REG_ADC_3_VAL_ADDR                                      0x0C /* Output of ADC 3 */
 #define IO_REG_ADC_4_VAL_ADDR                                      0x0E /* Output of ADC 4 */
-#define IO_REG_IRQ_SRC_ADDR                                        0x10 /* latching Interrupt source mask */
+#define IO_REG_IRQ_SRC_ADDR                                        0x1F /* latching Interrupt source mask. indicates souce of IRQ resets on read */
+#define IO_REG_PWM_0_VAL_ADDR                                      0x0F /* PWM value for ch 0 */
+#define IO_REG_PWM_1_VAL_ADDR                                      0x11 /* PWM value for ch 1 */
+#define IO_REG_PWM_2_VAL_ADDR                                      0x13 /* PWM value for ch 2 */
+#define IO_REG_PWM_3_VAL_ADDR                                      0x15 /* PWM value for ch 3 */
+#define IO_REG_PWM_4_VAL_ADDR                                      0x17 /* PWM value for ch 4 */
+#define IO_REG_PWM_5_VAL_ADDR                                      0x19 /* PWM value for ch 5 */
 #define IO_REG_GPIO_0_CFG_ADDR                                     0x20 /* Configuration for GPIO 0 */
 #define IO_REG_GPIO_1_CFG_ADDR                                     0x21 /* Configuration for GPIO 1 */
 #define IO_REG_GPIO_2_CFG_ADDR                                     0x22 /* Configuration for GPIO 2 */
@@ -35,14 +41,14 @@
 #define IO_REG_GPIO_9_CFG_ADDR                                     0x29 /* Configuration for GPIO 9 */
 #define IO_REG_GPIO_10_CFG_ADDR                                    0x2A /* Configuration for GPIO 10 */
 #define IO_REG_GPIO_11_CFG_ADDR                                    0x2B /* Configuration for GPIO 11 */
-#define IO_REG_ADC_0_CFG_ADDR                                      0x30 /* Configuration for ADC 0 */
-#define IO_REG_ADC_1_CFG_ADDR                                      0x32 /* Configuration for ADC 1 */
-#define IO_REG_ADC_2_CFG_ADDR                                      0x34 /* Configuration for ADC 2 */
-#define IO_REG_ADC_3_CFG_ADDR                                      0x36 /* Configuration for ADC 3 */
-#define IO_REG_ADC_4_CFG_ADDR                                      0x38 /* Configuration for ADC 4 */
-#define IO_REG_PWM_CONFIG_ADDR                                     0x40 /* Configuration for PWM */
-#define IO_REG_WHO_AM_I_ADDR                                       0x60 /* Device ID */
-#define IO_REG_EEPROM_MEM_ADDR                                     0x7F /* Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address */
+#define IO_REG_ADC_0_CFG_ADDR                                      0x2C /* Configuration for ADC 0 */
+#define IO_REG_ADC_1_CFG_ADDR                                      0x2E /* Configuration for ADC 1 */
+#define IO_REG_ADC_2_CFG_ADDR                                      0x30 /* Configuration for ADC 2 */
+#define IO_REG_ADC_3_CFG_ADDR                                      0x32 /* Configuration for ADC 3 */
+#define IO_REG_ADC_4_CFG_ADDR                                      0x34 /* Configuration for ADC 4 */
+#define IO_REG_PWM_CONFIG_ADDR                                     0x36 /* Configuration for PWM */
+#define IO_REG_WHO_AM_I_ADDR                                       0x3A /* Device ID */
+#define IO_REG_EEPROM_MEM_ADDR                                     0x3B /* Start address of EEPROM memory on stm8. User can read/write up to 128 bytes starting at this address */
 
 
 /*******************************************************************************
@@ -61,28 +67,33 @@
 
 /* ADC_0_VAL Register Fields */
     /* ADC_0_VAL -> ADC_0_VAL */
-    #define IO_ADC_0_VAL_ADC_0_VAL_FIELD_MASK                      0xFFFF /* Analog value on ADC0 */
+    #define IO_ADC_0_VAL_ADC_0_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 0 */
     #define IO_ADC_0_VAL_ADC_0_VAL_FIELD_OFFSET                    0x0000
 
 /* ADC_1_VAL Register Fields */
     /* ADC_1_VAL -> ADC_1_VAL */
-    #define IO_ADC_1_VAL_ADC_1_VAL_FIELD_MASK                      0xFFFF /* Analog value on ADC1 */
+    #define IO_ADC_1_VAL_ADC_1_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 1 */
     #define IO_ADC_1_VAL_ADC_1_VAL_FIELD_OFFSET                    0x0000
 
 /* ADC_2_VAL Register Fields */
     /* ADC_2_VAL -> ADC_2_VAL */
-    #define IO_ADC_2_VAL_ADC_2_VAL_FIELD_MASK                      0xFFFF /* Analog value on ADC2 */
+    #define IO_ADC_2_VAL_ADC_2_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 2 */
     #define IO_ADC_2_VAL_ADC_2_VAL_FIELD_OFFSET                    0x0000
 
 /* ADC_3_VAL Register Fields */
     /* ADC_3_VAL -> ADC_3_VAL */
-    #define IO_ADC_3_VAL_ADC_3_VAL_FIELD_MASK                      0xFFFF /* Analog value on ADC3 */
+    #define IO_ADC_3_VAL_ADC_3_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 3 */
     #define IO_ADC_3_VAL_ADC_3_VAL_FIELD_OFFSET                    0x0000
 
 /* ADC_4_VAL Register Fields */
     /* ADC_4_VAL -> ADC_4_VAL */
-    #define IO_ADC_4_VAL_ADC_4_VAL_FIELD_MASK                      0xFFFF /* Analog value on ADC4 */
+    #define IO_ADC_4_VAL_ADC_4_VAL_FIELD_MASK                      0xFFFF /* Output of ADC 4 */
     #define IO_ADC_4_VAL_ADC_4_VAL_FIELD_OFFSET                    0x0000
+
+/* IRQ_SRC Register Fields */
+    /* IRQ_SRC -> IRQ_SRC */
+    #define IO_IRQ_SRC_IRQ_SRC_FIELD_MASK                          0xFFFF /* latching Interrupt source mask. indicates souce of IRQ resets on read */
+    #define IO_IRQ_SRC_IRQ_SRC_FIELD_OFFSET                        0x0000
 
 /* PWM_0_VAL Register Fields */
     /* PWM_0_VAL -> PWM_0_VAL */
@@ -113,11 +124,6 @@
     /* PWM_5_VAL -> PWM_5_VAL */
     #define IO_PWM_5_VAL_PWM_5_VAL_FIELD_MASK                      0xFFFF /* PWM value for ch 5 */
     #define IO_PWM_5_VAL_PWM_5_VAL_FIELD_OFFSET                    0x0000
-
-/* IRQ_SRC Register Fields */
-    /* IRQ_SRC -> IRQ_SRC */
-    #define IO_IRQ_SRC_IRQ_SRC_FIELD_MASK                          0xFFFF /* latching Interrupt source mask. indicates souce of IRQ resets on read */
-    #define IO_IRQ_SRC_IRQ_SRC_FIELD_OFFSET                        0x0000
 
 /* GPIO_0_CFG Register Fields */
     /* GPIO_0_CFG -> Flags */
@@ -286,20 +292,6 @@
       #define IO_GPIO_11_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
       #define IO_GPIO_11_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
       #define IO_GPIO_11_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_12_CFG Register Fields */
-    /* GPIO_12_CFG -> Flags */
-    #define IO_GPIO_12_CFG_DIR                                     0x80 /* Pin Direction */
-    #define IO_GPIO_12_CFG_PP                                      0x40 /* Enables Push/Pull, Otherwise pin is OpenDrain/floating */
-    #define IO_GPIO_12_CFG_ALT                                     0x08 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_12_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_12_CFG -> IRQ */
-    #define IO_GPIO_12_CFG_IRQ_FIELD_MASK                          0x30 /* Interrupt selection */
-    #define IO_GPIO_12_CFG_IRQ_FIELD_OFFSET                        0x04
-      #define IO_GPIO_12_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_12_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_12_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_12_CFG_IRQ_ANY                               0x03 /* Trigger on any */
 
 /* ADC_0_CFG Register Fields */
     /* ADC_0_CFG -> Flags */
@@ -599,15 +591,6 @@
  */
 #define io_get_gpio_11_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_IRQ_FIELD_MASK )
 /**
- * @brief reads the IRQ field from the GPIO_12_CFG register 
- * @param dev ptr to stm8_expander device
- * @return IO_GPIO_12_CFG_IRQ_NONE No interrupt
- * @return IO_GPIO_12_CFG_IRQ_RISING Trigger on Rising
- * @return IO_GPIO_12_CFG_IRQ_FALLING Trigger on falling
- * @return IO_GPIO_12_CFG_IRQ_ANY Trigger on any
- */
-#define io_get_gpio_12_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_IRQ_FIELD_MASK )
-/**
  * @brief reads the Treshold field from the ADC_0_CFG register 
  * @param dev ptr to stm8_expander device
  */
@@ -857,15 +840,6 @@
  * @option IO_GPIO_11_CFG_IRQ_ANY Trigger on any
  */
 #define io_set_gpio_11_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_IRQ_FIELD_MASK , (val) )
-/**
- * @brief writes the IRQ field to the GPIO_12_CFG register 
- * @param dev ptr to stm8_expander device
- * @option IO_GPIO_12_CFG_IRQ_NONE No interrupt
- * @option IO_GPIO_12_CFG_IRQ_RISING Trigger on Rising
- * @option IO_GPIO_12_CFG_IRQ_FALLING Trigger on falling
- * @option IO_GPIO_12_CFG_IRQ_ANY Trigger on any
- */
-#define io_set_gpio_12_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Treshold field to the ADC_0_CFG register 
  * @param dev ptr to stm8_expander device

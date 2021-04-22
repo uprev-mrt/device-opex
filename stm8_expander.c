@@ -25,13 +25,13 @@ static mrt_status_t io_init(stm8_expander_t* dev)
     REG_INIT( dev->mAdc2Val , IO_REG_ADC_2_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mAdc3Val , IO_REG_ADC_3_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mAdc4Val , IO_REG_ADC_4_VAL_ADDR , uint16_t, REG_PERM_R , 0x0000  );
+    REG_INIT( dev->mIrqSrc , IO_REG_IRQ_SRC_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mPwm0Val , IO_REG_PWM_0_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
     REG_INIT( dev->mPwm1Val , IO_REG_PWM_1_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
     REG_INIT( dev->mPwm2Val , IO_REG_PWM_2_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
     REG_INIT( dev->mPwm3Val , IO_REG_PWM_3_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
     REG_INIT( dev->mPwm4Val , IO_REG_PWM_4_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
     REG_INIT( dev->mPwm5Val , IO_REG_PWM_5_VAL_ADDR , uint16_t, REG_PERM_W , 0x0000  );
-    REG_INIT( dev->mIrqSrc , IO_REG_IRQ_SRC_ADDR , uint16_t, REG_PERM_R , 0x0000  );
     REG_INIT( dev->mGpio0Cfg , IO_REG_GPIO_0_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio1Cfg , IO_REG_GPIO_1_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio2Cfg , IO_REG_GPIO_2_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
@@ -44,7 +44,6 @@ static mrt_status_t io_init(stm8_expander_t* dev)
     REG_INIT( dev->mGpio9Cfg , IO_REG_GPIO_9_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio10Cfg , IO_REG_GPIO_10_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mGpio11Cfg , IO_REG_GPIO_11_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
-    REG_INIT( dev->mGpio12Cfg , IO_REG_GPIO_12_CFG_ADDR , uint8_t, REG_PERM_RW , 0x00  );
     REG_INIT( dev->mAdc0Cfg , IO_REG_ADC_0_CFG_ADDR , uint16_t, REG_PERM_RW , 0x0000  );
     REG_INIT( dev->mAdc1Cfg , IO_REG_ADC_1_CFG_ADDR , uint16_t, REG_PERM_RW , 0x0000  );
     REG_INIT( dev->mAdc2Cfg , IO_REG_ADC_2_CFG_ADDR , uint16_t, REG_PERM_RW , 0x0000  );
