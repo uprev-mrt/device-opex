@@ -3,8 +3,8 @@ name: stm8_expander
 category: Device/IO
 description: Driver for STM8 running custom GPIO expander firmware 
 datasheet: https://www.st.com/resource/en/datasheet/stm8s003f3.pdf
-mfg: UpRev
-mfg_pn: STM8S003F3
+mfr: UpRev
+mfr_pn: STM8S003F3
 digikey_pn: 497-18052-2-ND
 
 prefix: io  #prefix used in code generation
