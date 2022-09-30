@@ -2,7 +2,7 @@
 
 extern "C"{
 
-#include "stm8_expander_slave.c"
+#include "opex_slave.c"
 }
 
 
