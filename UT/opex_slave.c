@@ -135,7 +135,7 @@ void io_slave_put( uint8_t data )
                 {
                     REGS.mCurrentReg->mFlags |= SLAVE_REG_ACESS_W_COMPLETE;  //mark that register write is complete
                     REGS.mFlags |= SLAVE_REG_ACESS_W;                        //Mark that a register has been written
-                    io_slave_handle_write( REGS.mCurrentReg)
+                    io_slave_handle_write( REGS.mCurrentReg);
                     go_to_register(REGS.mCursor);
 
                 }
