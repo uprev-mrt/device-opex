@@ -17,25 +17,58 @@ Driver for MCU running custom GPIO expander firmware
 
 .. *user-block-description-start*
 
+Updating Registers 
+------------------
 
-Usage
+If changes are made to the device.yml file, the code can be updated using `mrtutils`
+
+.. code:: bash 
+
+    mrt-device -i doc/device.yml -o .
+
+Usage 
 -----
 
-To configure a GPIO 
+Configure GPIO 
+~~~~~~~~~~~~~~
 
 .. code:: c 
 
-    opex_t opex; 
+    opex_t exp; 
 
-    io_init_i2c(&opex, I2C1);                                          // Initialize expander on I2C1
+    io_init_i2c(&exp, I2C1);            // Initialize expander on I2C1
 
-    io_cfg_gpio_out(&opex, 0);                                         // Configure GPIO 0 to be an output 
-    io_cfg_gpio_in(&opex, 1, IO_CFG_PP_ON, IO_CFG_IRQ_FALLING);        // Configure GPIO 1 to be an input with PUSH/Pull ON, and a falling trigger for IRQ
+    io_gpio_cfg_t cfg; 
 
-    io_set_gpio(&opex, 1, LOW);                                        // Sets GPIO output to LOW. Since it is configured as an input, this enables the internal pulldown resistor
-    io_set_gpio(&opex, 0,HIGH);                                        // Sets GPIO 0 High
+    cfg.mDIR = IO_GPIO_X_CFG_DIR_OUT;
 
-    io_cfg_irq(&opex, IO_IRQ_POLAR_LOW, 12)                            //Configure IRQ to pull GPIO 12 low when triggered
+    io_cfg_gpio(&exp, 0, &cfg);         // Configure GPIO 0 to be an output 
+
+    cfg.mDIR = IO_GPIO_X_CFG_DIR_IN;
+    cfg.mPP = 1;
+    cfg.mIRQ = IO_GPIO_X_CFG_IRQ_FALLING
+
+    io_cfg_gpio(&exp, 1, &cfg);        // Configure GPIO 1 to be an input with PUSH/Pull ON, and a falling trigger for IRQ
+
+    io_set_gpio(&exp, 1, LOW);         // Sets GPIO output to LOW. Since it is configured as an input, this enables the internal pulldown resistor
+
+
+
+Set GPIO 
+~~~~~~~~
+
+.. code:: c 
+
+    io_set_gpio(&exp, 0, HIGH);       // Sets GPIO 0 High
+
+
+Configure IRQ 
+~~~~~~~~~~~~~
+
+.. code:: c 
+
+    io_cfg_irq(&exp, IO_IRQ_POLAR_LOW, 12)                            //Configure IRQ to pull GPIO 12 low when triggered
+
 
 .. *user-block-description-end*
 
