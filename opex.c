@@ -118,9 +118,118 @@ mrt_status_t io_test(opex_t* dev)
 
 /*user-block-bottom-start*/
 
-mrt_status_t io_cfg_gpio(opex_t* dev, uint8_t gpio, io_gpio_cfg_t cfg)
+mrt_status_t io_cfg_gpio(opex_t* dev, uint8_t gpio, io_gpio_cfg_t* cfg)
 {
 
-    dev
+    mrt_reg_t* reg = &dev->mGpio0Cfg;
+
+    switch (gpio)
+    {
+        case 0: 
+			reg = &dev->mGpio0Cfg;
+			break;
+        case 1: 
+			reg = &dev->mGpio1Cfg;
+			break;
+        case 2: 
+			reg = &dev->mGpio2Cfg;
+			break;
+        case 3: 
+			reg = &dev->mGpio3Cfg;
+			break;
+        case 4: 
+			reg = &dev->mGpio4Cfg;
+			break;
+        case 5: 
+			reg = &dev->mGpio5Cfg;
+			break;
+        case 6: 
+			reg = &dev->mGpio6Cfg;
+			break;
+        case 7: 
+			reg = &dev->mGpio7Cfg;
+			break;
+        case 8: 
+			reg = &dev->mGpio8Cfg;
+			break;
+        case 9: 
+			reg = &dev->mGpio9Cfg;
+			break;
+        case 10: 
+			reg = &dev->mGpio10Cfg;
+			break;
+        case 11: 
+			reg = &dev->mGpio11Cfg;
+			break;
+        case 12: 
+			reg = &dev->mGpio12Cfg;
+			break;
+        case 13: 
+			reg = &dev->mGpio13Cfg;
+			break;
+        case 14: 
+			reg = &dev->mGpio14Cfg;
+			break;
+        case 15: 
+			reg = &dev->mGpio15Cfg;
+			break;
+        case 16: 
+			reg = &dev->mGpio16Cfg;
+			break;
+        case 17: 
+			reg = &dev->mGpio17Cfg;
+			break;
+        case 18: 
+			reg = &dev->mGpio18Cfg;
+			break;
+        case 19: 
+			reg = &dev->mGpio19Cfg;
+			break;
+        case 20: 
+			reg = &dev->mGpio20Cfg;
+			break;
+        case 21: 
+			reg = &dev->mGpio21Cfg;
+			break;
+        case 22: 
+			reg = &dev->mGpio22Cfg;
+			break;
+        case 23: 
+			reg = &dev->mGpio23Cfg;
+			break;
+        case 24: 
+			reg = &dev->mGpio24Cfg;
+			break;
+        case 25: 
+			reg = &dev->mGpio25Cfg;
+			break;
+    }
+
+
+   return io_write_reg(dev, reg, &cfg->mReg); 
+}
+
+mrt_status_t io_set_gpio(opex_t* dev, uint8_t gpio, uint8_t val)
+{
+
+    uint32_t prevVal = dev->mGpioOut.mCache; //Output should only change when we set it, so cache should always be valid
+
+    if(val)
+    {
+        prevVal |= 1 << gpio;
+    }
+    else 
+    {
+        prevVal &= ~(1 << gpio);
+    }
+
+    return io_write_reg(dev, &dev->mGpioOut, &prevVal); 
+}
+
+uint8_t io_get_gpio(opex_t* dev, uint8_t gpio, uint8_t val)
+{
+    uint32_t val = io_read_reg(dev, &dev->mGpioIn);
+
+    return (1 >> gpio) & 1;
 }
 /*user-block-bottom-end*/
