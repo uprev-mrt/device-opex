@@ -20,8 +20,8 @@ extern "C"
 /*user-block-top-start*/
 
 typedef struct{
-  union{
-    struct mFields{
+  union {
+    struct mFields {
       uint8_t mDIR : 1;
       uint8_t mPP : 1;
       uint8_t mLL : 1;
@@ -30,7 +30,7 @@ typedef struct{
       uint8_t mEN:  1;
     };
     uint8_t mReg;
-  }
+  } ;
 } io_gpio_cfg_t;
 /*user-block-top-end*/
 
@@ -138,8 +138,9 @@ mrt_status_t io_test(opex_t* dev);
 
 /*user-block-bottom-start*/
 
-mrt_status_t io_cfg_gpio(opex_t* dev, uint8_t gpio, io_gpio_cfg_t cfg); 
-mrt_status_t io_cfg_gpio_in(opex_t* dev, uint8_t gpio); 
+mrt_status_t io_cfg_gpio(opex_t* dev, uint8_t gpio, io_gpio_cfg_t * cfg); 
+mrt_status_t io_set_gpio(opex_t* dev, uint8_t gpio, uint8_t val); 
+uint8_t io_get_gpio(opex_t* dev, uint8_t gpio, uint8_t val);
 
 /*user-block-bottom-end*/
 
