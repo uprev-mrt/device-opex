@@ -82,605 +82,28 @@
       #define IO_IRQ_SRC_IRQ_SRC_ADC_2                             0x10000000 /* IRQ triggered by ADC2 */
       #define IO_IRQ_SRC_IRQ_SRC_ADC_3                             0x20000000 /* IRQ triggered by ADC3 */
       #define IO_IRQ_SRC_IRQ_SRC_ADC_4                             0x40000000 /* IRQ triggered by ADC4 */
-
 /* GPIO_0_CFG Register Fields */
     /* GPIO_0_CFG -> Flags */
-    #define IO_GPIO_0_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_0_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_0_CFG_EN                                       0x01 /* Enables GPIO */
+    #define IO_GPIO_X_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
+    #define IO_GPIO_X_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
+    #define IO_GPIO_X_CFG_EN                                       0x01 /* Enables GPIO */
     /* GPIO_0_CFG -> DIR */
-    #define IO_GPIO_0_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_0_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_0_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_0_CFG_DIR_OUT                                0x01 /* GPIO is an output */
+    #define IO_GPIO_X_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
+    #define IO_GPIO_X_CFG_DIR_FIELD_OFFSET                         0x07
+      #define IO_GPIO_X_CFG_DIR_IN                                 0x00 /* GPIO is an input */
+      #define IO_GPIO_X_CFG_DIR_OUT                                0x01 /* GPIO is an output */
     /* GPIO_0_CFG -> LL */
-    #define IO_GPIO_0_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_0_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_0_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_0_CFG_LL_HIGH                                0x01 /*  */
+    #define IO_GPIO_X_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
+    #define IO_GPIO_X_CFG_LL_FIELD_OFFSET                          0x04
+      #define IO_GPIO_X_CFG_LL_LOW                                 0x00 /* Low level output */
+      #define IO_GPIO_X_CFG_LL_HIGH                                0x01 /*  */
     /* GPIO_0_CFG -> IRQ */
-    #define IO_GPIO_0_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_0_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_0_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_0_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_0_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_0_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_1_CFG Register Fields */
-    /* GPIO_1_CFG -> Flags */
-    #define IO_GPIO_1_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_1_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_1_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_1_CFG -> DIR */
-    #define IO_GPIO_1_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_1_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_1_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_1_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_1_CFG -> LL */
-    #define IO_GPIO_1_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_1_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_1_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_1_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_1_CFG -> IRQ */
-    #define IO_GPIO_1_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_1_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_1_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_1_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_1_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_1_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_2_CFG Register Fields */
-    /* GPIO_2_CFG -> Flags */
-    #define IO_GPIO_2_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_2_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_2_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_2_CFG -> DIR */
-    #define IO_GPIO_2_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_2_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_2_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_2_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_2_CFG -> LL */
-    #define IO_GPIO_2_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_2_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_2_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_2_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_2_CFG -> IRQ */
-    #define IO_GPIO_2_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_2_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_2_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_2_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_2_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_2_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_3_CFG Register Fields */
-    /* GPIO_3_CFG -> Flags */
-    #define IO_GPIO_3_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_3_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_3_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_3_CFG -> DIR */
-    #define IO_GPIO_3_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_3_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_3_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_3_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_3_CFG -> LL */
-    #define IO_GPIO_3_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_3_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_3_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_3_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_3_CFG -> IRQ */
-    #define IO_GPIO_3_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_3_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_3_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_3_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_3_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_3_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_4_CFG Register Fields */
-    /* GPIO_4_CFG -> Flags */
-    #define IO_GPIO_4_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_4_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_4_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_4_CFG -> DIR */
-    #define IO_GPIO_4_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_4_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_4_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_4_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_4_CFG -> LL */
-    #define IO_GPIO_4_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_4_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_4_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_4_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_4_CFG -> IRQ */
-    #define IO_GPIO_4_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_4_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_4_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_4_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_4_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_4_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_5_CFG Register Fields */
-    /* GPIO_5_CFG -> Flags */
-    #define IO_GPIO_5_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_5_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_5_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_5_CFG -> DIR */
-    #define IO_GPIO_5_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_5_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_5_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_5_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_5_CFG -> LL */
-    #define IO_GPIO_5_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_5_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_5_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_5_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_5_CFG -> IRQ */
-    #define IO_GPIO_5_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_5_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_5_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_5_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_5_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_5_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_6_CFG Register Fields */
-    /* GPIO_6_CFG -> Flags */
-    #define IO_GPIO_6_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_6_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_6_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_6_CFG -> DIR */
-    #define IO_GPIO_6_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_6_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_6_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_6_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_6_CFG -> LL */
-    #define IO_GPIO_6_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_6_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_6_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_6_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_6_CFG -> IRQ */
-    #define IO_GPIO_6_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_6_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_6_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_6_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_6_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_6_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_7_CFG Register Fields */
-    /* GPIO_7_CFG -> Flags */
-    #define IO_GPIO_7_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_7_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_7_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_7_CFG -> DIR */
-    #define IO_GPIO_7_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_7_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_7_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_7_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_7_CFG -> LL */
-    #define IO_GPIO_7_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_7_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_7_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_7_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_7_CFG -> IRQ */
-    #define IO_GPIO_7_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_7_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_7_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_7_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_7_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_7_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_8_CFG Register Fields */
-    /* GPIO_8_CFG -> Flags */
-    #define IO_GPIO_8_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_8_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_8_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_8_CFG -> DIR */
-    #define IO_GPIO_8_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_8_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_8_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_8_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_8_CFG -> LL */
-    #define IO_GPIO_8_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_8_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_8_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_8_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_8_CFG -> IRQ */
-    #define IO_GPIO_8_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_8_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_8_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_8_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_8_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_8_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_9_CFG Register Fields */
-    /* GPIO_9_CFG -> Flags */
-    #define IO_GPIO_9_CFG_PP                                       0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_9_CFG_ALT                                      0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_9_CFG_EN                                       0x01 /* Enables GPIO */
-    /* GPIO_9_CFG -> DIR */
-    #define IO_GPIO_9_CFG_DIR_FIELD_MASK                           0x80 /* Pin Direction */
-    #define IO_GPIO_9_CFG_DIR_FIELD_OFFSET                         0x07
-      #define IO_GPIO_9_CFG_DIR_IN                                 0x00 /* GPIO is an input */
-      #define IO_GPIO_9_CFG_DIR_OUT                                0x01 /* GPIO is an output */
-    /* GPIO_9_CFG -> LL */
-    #define IO_GPIO_9_CFG_LL_FIELD_MASK                            0x10 /* Low Level */
-    #define IO_GPIO_9_CFG_LL_FIELD_OFFSET                          0x04
-      #define IO_GPIO_9_CFG_LL_LOW                                 0x00 /* Low level output */
-      #define IO_GPIO_9_CFG_LL_HIGH                                0x01 /*  */
-    /* GPIO_9_CFG -> IRQ */
-    #define IO_GPIO_9_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
-    #define IO_GPIO_9_CFG_IRQ_FIELD_OFFSET                         0x02
-      #define IO_GPIO_9_CFG_IRQ_NONE                               0x00 /* No interrupt */
-      #define IO_GPIO_9_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
-      #define IO_GPIO_9_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
-      #define IO_GPIO_9_CFG_IRQ_ANY                                0x03 /* Trigger on any */
-
-/* GPIO_10_CFG Register Fields */
-    /* GPIO_10_CFG -> Flags */
-    #define IO_GPIO_10_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_10_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_10_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_10_CFG -> DIR */
-    #define IO_GPIO_10_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_10_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_10_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_10_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_10_CFG -> LL */
-    #define IO_GPIO_10_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_10_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_10_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_10_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_10_CFG -> IRQ */
-    #define IO_GPIO_10_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_10_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_10_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_10_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_10_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_10_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_11_CFG Register Fields */
-    /* GPIO_11_CFG -> Flags */
-    #define IO_GPIO_11_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_11_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_11_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_11_CFG -> DIR */
-    #define IO_GPIO_11_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_11_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_11_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_11_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_11_CFG -> LL */
-    #define IO_GPIO_11_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_11_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_11_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_11_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_11_CFG -> IRQ */
-    #define IO_GPIO_11_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_11_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_11_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_11_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_11_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_11_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_12_CFG Register Fields */
-    /* GPIO_12_CFG -> Flags */
-    #define IO_GPIO_12_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_12_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_12_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_12_CFG -> DIR */
-    #define IO_GPIO_12_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_12_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_12_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_12_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_12_CFG -> LL */
-    #define IO_GPIO_12_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_12_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_12_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_12_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_12_CFG -> IRQ */
-    #define IO_GPIO_12_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_12_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_12_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_12_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_12_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_12_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_13_CFG Register Fields */
-    /* GPIO_13_CFG -> Flags */
-    #define IO_GPIO_13_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_13_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_13_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_13_CFG -> DIR */
-    #define IO_GPIO_13_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_13_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_13_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_13_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_13_CFG -> LL */
-    #define IO_GPIO_13_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_13_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_13_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_13_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_13_CFG -> IRQ */
-    #define IO_GPIO_13_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_13_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_13_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_13_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_13_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_13_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_14_CFG Register Fields */
-    /* GPIO_14_CFG -> Flags */
-    #define IO_GPIO_14_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_14_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_14_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_14_CFG -> DIR */
-    #define IO_GPIO_14_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_14_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_14_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_14_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_14_CFG -> LL */
-    #define IO_GPIO_14_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_14_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_14_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_14_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_14_CFG -> IRQ */
-    #define IO_GPIO_14_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_14_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_14_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_14_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_14_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_14_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_15_CFG Register Fields */
-    /* GPIO_15_CFG -> Flags */
-    #define IO_GPIO_15_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_15_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_15_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_15_CFG -> DIR */
-    #define IO_GPIO_15_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_15_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_15_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_15_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_15_CFG -> LL */
-    #define IO_GPIO_15_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_15_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_15_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_15_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_15_CFG -> IRQ */
-    #define IO_GPIO_15_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_15_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_15_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_15_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_15_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_15_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_16_CFG Register Fields */
-    /* GPIO_16_CFG -> Flags */
-    #define IO_GPIO_16_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_16_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_16_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_16_CFG -> DIR */
-    #define IO_GPIO_16_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_16_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_16_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_16_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_16_CFG -> LL */
-    #define IO_GPIO_16_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_16_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_16_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_16_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_16_CFG -> IRQ */
-    #define IO_GPIO_16_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_16_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_16_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_16_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_16_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_16_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_17_CFG Register Fields */
-    /* GPIO_17_CFG -> Flags */
-    #define IO_GPIO_17_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_17_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_17_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_17_CFG -> DIR */
-    #define IO_GPIO_17_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_17_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_17_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_17_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_17_CFG -> LL */
-    #define IO_GPIO_17_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_17_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_17_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_17_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_17_CFG -> IRQ */
-    #define IO_GPIO_17_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_17_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_17_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_17_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_17_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_17_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_18_CFG Register Fields */
-    /* GPIO_18_CFG -> Flags */
-    #define IO_GPIO_18_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_18_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_18_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_18_CFG -> DIR */
-    #define IO_GPIO_18_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_18_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_18_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_18_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_18_CFG -> LL */
-    #define IO_GPIO_18_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_18_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_18_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_18_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_18_CFG -> IRQ */
-    #define IO_GPIO_18_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_18_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_18_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_18_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_18_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_18_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_19_CFG Register Fields */
-    /* GPIO_19_CFG -> Flags */
-    #define IO_GPIO_19_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_19_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_19_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_19_CFG -> DIR */
-    #define IO_GPIO_19_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_19_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_19_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_19_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_19_CFG -> LL */
-    #define IO_GPIO_19_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_19_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_19_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_19_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_19_CFG -> IRQ */
-    #define IO_GPIO_19_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_19_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_19_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_19_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_19_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_19_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_20_CFG Register Fields */
-    /* GPIO_20_CFG -> Flags */
-    #define IO_GPIO_20_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_20_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_20_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_20_CFG -> DIR */
-    #define IO_GPIO_20_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_20_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_20_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_20_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_20_CFG -> LL */
-    #define IO_GPIO_20_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_20_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_20_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_20_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_20_CFG -> IRQ */
-    #define IO_GPIO_20_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_20_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_20_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_20_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_20_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_20_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_21_CFG Register Fields */
-    /* GPIO_21_CFG -> Flags */
-    #define IO_GPIO_21_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_21_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_21_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_21_CFG -> DIR */
-    #define IO_GPIO_21_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_21_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_21_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_21_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_21_CFG -> LL */
-    #define IO_GPIO_21_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_21_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_21_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_21_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_21_CFG -> IRQ */
-    #define IO_GPIO_21_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_21_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_21_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_21_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_21_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_21_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_22_CFG Register Fields */
-    /* GPIO_22_CFG -> Flags */
-    #define IO_GPIO_22_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_22_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_22_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_22_CFG -> DIR */
-    #define IO_GPIO_22_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_22_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_22_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_22_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_22_CFG -> LL */
-    #define IO_GPIO_22_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_22_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_22_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_22_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_22_CFG -> IRQ */
-    #define IO_GPIO_22_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_22_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_22_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_22_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_22_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_22_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_23_CFG Register Fields */
-    /* GPIO_23_CFG -> Flags */
-    #define IO_GPIO_23_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_23_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_23_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_23_CFG -> DIR */
-    #define IO_GPIO_23_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_23_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_23_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_23_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_23_CFG -> LL */
-    #define IO_GPIO_23_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_23_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_23_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_23_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_23_CFG -> IRQ */
-    #define IO_GPIO_23_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_23_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_23_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_23_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_23_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_23_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_24_CFG Register Fields */
-    /* GPIO_24_CFG -> Flags */
-    #define IO_GPIO_24_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_24_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_24_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_24_CFG -> DIR */
-    #define IO_GPIO_24_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_24_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_24_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_24_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_24_CFG -> LL */
-    #define IO_GPIO_24_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_24_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_24_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_24_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_24_CFG -> IRQ */
-    #define IO_GPIO_24_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_24_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_24_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_24_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_24_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_24_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
-/* GPIO_25_CFG Register Fields */
-    /* GPIO_25_CFG -> Flags */
-    #define IO_GPIO_25_CFG_PP                                      0x40 /* Enables Push/Pull on output, and Pull-up on input */
-    #define IO_GPIO_25_CFG_ALT                                     0x02 /* Indicates that GPIO is disabled because pin is being used for an alternate function (PWM, ADC, etc) */
-    #define IO_GPIO_25_CFG_EN                                      0x01 /* Enables GPIO */
-    /* GPIO_25_CFG -> DIR */
-    #define IO_GPIO_25_CFG_DIR_FIELD_MASK                          0x80 /* Pin Direction */
-    #define IO_GPIO_25_CFG_DIR_FIELD_OFFSET                        0x07
-      #define IO_GPIO_25_CFG_DIR_IN                                0x00 /* GPIO is an input */
-      #define IO_GPIO_25_CFG_DIR_OUT                               0x01 /* GPIO is an output */
-    /* GPIO_25_CFG -> LL */
-    #define IO_GPIO_25_CFG_LL_FIELD_MASK                           0x10 /* Low Level */
-    #define IO_GPIO_25_CFG_LL_FIELD_OFFSET                         0x04
-      #define IO_GPIO_25_CFG_LL_LOW                                0x00 /* Low level output */
-      #define IO_GPIO_25_CFG_LL_HIGH                               0x01 /*  */
-    /* GPIO_25_CFG -> IRQ */
-    #define IO_GPIO_25_CFG_IRQ_FIELD_MASK                          0x0C /* Interrupt selection */
-    #define IO_GPIO_25_CFG_IRQ_FIELD_OFFSET                        0x02
-      #define IO_GPIO_25_CFG_IRQ_NONE                              0x00 /* No interrupt */
-      #define IO_GPIO_25_CFG_IRQ_RISING                            0x01 /* Trigger on Rising */
-      #define IO_GPIO_25_CFG_IRQ_FALLING                           0x02 /* Trigger on falling */
-      #define IO_GPIO_25_CFG_IRQ_ANY                               0x03 /* Trigger on any */
-
+    #define IO_GPIO_X_CFG_IRQ_FIELD_MASK                           0x0C /* Interrupt selection */
+    #define IO_GPIO_X_CFG_IRQ_FIELD_OFFSET                         0x02
+      #define IO_GPIO_X_CFG_IRQ_NONE                               0x00 /* No interrupt */
+      #define IO_GPIO_X_CFG_IRQ_RISING                             0x01 /* Trigger on Rising */
+      #define IO_GPIO_X_CFG_IRQ_FALLING                            0x02 /* Trigger on falling */
+      #define IO_GPIO_X_CFG_IRQ_ANY                                0x03 /* Trigger on any */
 /* IRQ_CFG Register Fields */
     /* IRQ_CFG -> Flags */
     #define IO_IRQ_CFG_ENABLED                                     0x8000 /* Enables IRQ signal on selected GPIO */
@@ -692,77 +115,19 @@
     /* IRQ_CFG -> Output */
     #define IO_IRQ_CFG_OUTPUT_FIELD_MASK                           0x001F /* Selects the GPIO to use for IRQ */
     #define IO_IRQ_CFG_OUTPUT_FIELD_OFFSET                         0x0000
-
 /* ADC_0_CFG Register Fields */
     /* ADC_0_CFG -> Flags */
-    #define IO_ADC_0_CFG_EN                                        0x0001 /* Enables ADC Channel */
+    #define IO_ADC_X_CFG_EN                                        0x0001 /* Enables ADC Channel */
     /* ADC_0_CFG -> Treshold */
-    #define IO_ADC_0_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
-    #define IO_ADC_0_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
+    #define IO_ADC_X_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
+    #define IO_ADC_X_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
     /* ADC_0_CFG -> IRQ */
-    #define IO_ADC_0_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
-    #define IO_ADC_0_CFG_IRQ_FIELD_OFFSET                          0x0002
-      #define IO_ADC_0_CFG_IRQ_NONE                                0x0000 /* No interrupt */
-      #define IO_ADC_0_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
-      #define IO_ADC_0_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
-      #define IO_ADC_0_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
-
-/* ADC_1_CFG Register Fields */
-    /* ADC_1_CFG -> Flags */
-    #define IO_ADC_1_CFG_EN                                        0x0001 /* Enables ADC Channel */
-    /* ADC_1_CFG -> Treshold */
-    #define IO_ADC_1_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
-    #define IO_ADC_1_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
-    /* ADC_1_CFG -> IRQ */
-    #define IO_ADC_1_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
-    #define IO_ADC_1_CFG_IRQ_FIELD_OFFSET                          0x0002
-      #define IO_ADC_1_CFG_IRQ_NONE                                0x0000 /* No interrupt */
-      #define IO_ADC_1_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
-      #define IO_ADC_1_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
-      #define IO_ADC_1_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
-
-/* ADC_2_CFG Register Fields */
-    /* ADC_2_CFG -> Flags */
-    #define IO_ADC_2_CFG_EN                                        0x0001 /* Enables ADC Channel */
-    /* ADC_2_CFG -> Treshold */
-    #define IO_ADC_2_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
-    #define IO_ADC_2_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
-    /* ADC_2_CFG -> IRQ */
-    #define IO_ADC_2_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
-    #define IO_ADC_2_CFG_IRQ_FIELD_OFFSET                          0x0002
-      #define IO_ADC_2_CFG_IRQ_NONE                                0x0000 /* No interrupt */
-      #define IO_ADC_2_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
-      #define IO_ADC_2_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
-      #define IO_ADC_2_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
-
-/* ADC_3_CFG Register Fields */
-    /* ADC_3_CFG -> Flags */
-    #define IO_ADC_3_CFG_EN                                        0x0001 /* Enables ADC Channel */
-    /* ADC_3_CFG -> Treshold */
-    #define IO_ADC_3_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
-    #define IO_ADC_3_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
-    /* ADC_3_CFG -> IRQ */
-    #define IO_ADC_3_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
-    #define IO_ADC_3_CFG_IRQ_FIELD_OFFSET                          0x0002
-      #define IO_ADC_3_CFG_IRQ_NONE                                0x0000 /* No interrupt */
-      #define IO_ADC_3_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
-      #define IO_ADC_3_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
-      #define IO_ADC_3_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
-
-/* ADC_4_CFG Register Fields */
-    /* ADC_4_CFG -> Flags */
-    #define IO_ADC_4_CFG_EN                                        0x0001 /* Enables ADC Channel */
-    /* ADC_4_CFG -> Treshold */
-    #define IO_ADC_4_CFG_TRESHOLD_FIELD_MASK                       0xFFF0 /* IRQ threshold for ADC channel */
-    #define IO_ADC_4_CFG_TRESHOLD_FIELD_OFFSET                     0x0004
-    /* ADC_4_CFG -> IRQ */
-    #define IO_ADC_4_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
-    #define IO_ADC_4_CFG_IRQ_FIELD_OFFSET                          0x0002
-      #define IO_ADC_4_CFG_IRQ_NONE                                0x0000 /* No interrupt */
-      #define IO_ADC_4_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
-      #define IO_ADC_4_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
-      #define IO_ADC_4_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
-
+    #define IO_ADC_X_CFG_IRQ_FIELD_MASK                            0x000C /* Interrupt setting for ADC channel */
+    #define IO_ADC_X_CFG_IRQ_FIELD_OFFSET                          0x0002
+      #define IO_ADC_X_CFG_IRQ_NONE                                0x0000 /* No interrupt */
+      #define IO_ADC_X_CFG_IRQ_RISING                              0x0001 /* Trigger on Rising */
+      #define IO_ADC_X_CFG_IRQ_FALLING                             0x0002 /* Trigger on falling */
+      #define IO_ADC_X_CFG_IRQ_ANY                                 0x0003 /* Trigger on any */
 /* PWM_CONFIG Register Fields */
     /* PWM_CONFIG -> Flags */
     #define IO_PWM_CONFIG_CH0_ENABLE                               0x00000001 /* Enables PWM channel 0 */
@@ -795,14 +160,12 @@
       #define IO_PWM_CONFIG_PRESCALER_PRESCALER_8192               0x0000000D /* divide clock by 8192  () */
       #define IO_PWM_CONFIG_PRESCALER_PRESCALER_16384              0x0000000E /* divide clock by 16384 () */
       #define IO_PWM_CONFIG_PRESCALER_PRESCALER_32768              0x0000000F /* divide clock by 32768 () */
-
 /* WHO_AM_I Register Fields */
     /* WHO_AM_I -> ID */
     #define IO_WHO_AM_I_ID_FIELD_MASK                              0xFFFFFFFF /* ID of device */
     #define IO_WHO_AM_I_ID_FIELD_OFFSET                            0x00
       #define IO_WHO_AM_I_ID_STM8S003F3                            0x70 /* 20 pin variant */
       #define IO_WHO_AM_I_ID_STM8S003K3                            0x71 /* 32 pin variant */
-
 /* VERSION Register Fields */
     /* VERSION -> MAJOR */
     #define IO_VERSION_MAJOR_FIELD_MASK                            0xFF000000 /* Major Version */
@@ -816,7 +179,6 @@
     /* VERSION -> BUILD */
     #define IO_VERSION_BUILD_FIELD_MASK                            0x000000FF /* Major Version */
     #define IO_VERSION_BUILD_FIELD_OFFSET                          0x00000000
-
 
 /*******************************************************************************
   Default Values                                                                              
@@ -878,14 +240,14 @@
  * @return IO_GPIO_0_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_0_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_0_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_0_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_0_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_0_CFG_LL_LOW Low level output
  * @return IO_GPIO_0_CFG_LL_HIGH 
  */
-#define io_get_gpio_0_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_LL_FIELD_MASK )
+#define io_get_gpio_0_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_0_CFG register 
  * @param dev ptr to opex device
@@ -894,21 +256,21 @@
  * @return IO_GPIO_0_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_0_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_0_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_0_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_1_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_1_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_1_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_1_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_1_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_1_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_1_CFG_LL_LOW Low level output
  * @return IO_GPIO_1_CFG_LL_HIGH 
  */
-#define io_get_gpio_1_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_LL_FIELD_MASK )
+#define io_get_gpio_1_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_1_CFG register 
  * @param dev ptr to opex device
@@ -917,21 +279,21 @@
  * @return IO_GPIO_1_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_1_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_1_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_1_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_2_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_2_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_2_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_2_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_2_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_2_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_2_CFG_LL_LOW Low level output
  * @return IO_GPIO_2_CFG_LL_HIGH 
  */
-#define io_get_gpio_2_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_LL_FIELD_MASK )
+#define io_get_gpio_2_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_2_CFG register 
  * @param dev ptr to opex device
@@ -940,21 +302,21 @@
  * @return IO_GPIO_2_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_2_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_2_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_2_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_3_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_3_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_3_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_3_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_3_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_3_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_3_CFG_LL_LOW Low level output
  * @return IO_GPIO_3_CFG_LL_HIGH 
  */
-#define io_get_gpio_3_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_LL_FIELD_MASK )
+#define io_get_gpio_3_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_3_CFG register 
  * @param dev ptr to opex device
@@ -963,21 +325,21 @@
  * @return IO_GPIO_3_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_3_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_3_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_3_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_4_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_4_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_4_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_4_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_4_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_4_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_4_CFG_LL_LOW Low level output
  * @return IO_GPIO_4_CFG_LL_HIGH 
  */
-#define io_get_gpio_4_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_LL_FIELD_MASK )
+#define io_get_gpio_4_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_4_CFG register 
  * @param dev ptr to opex device
@@ -986,21 +348,21 @@
  * @return IO_GPIO_4_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_4_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_4_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_4_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_5_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_5_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_5_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_5_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_5_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_5_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_5_CFG_LL_LOW Low level output
  * @return IO_GPIO_5_CFG_LL_HIGH 
  */
-#define io_get_gpio_5_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_LL_FIELD_MASK )
+#define io_get_gpio_5_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_5_CFG register 
  * @param dev ptr to opex device
@@ -1009,21 +371,21 @@
  * @return IO_GPIO_5_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_5_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_5_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_5_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_6_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_6_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_6_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_6_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_6_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_6_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_6_CFG_LL_LOW Low level output
  * @return IO_GPIO_6_CFG_LL_HIGH 
  */
-#define io_get_gpio_6_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_LL_FIELD_MASK )
+#define io_get_gpio_6_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_6_CFG register 
  * @param dev ptr to opex device
@@ -1032,21 +394,21 @@
  * @return IO_GPIO_6_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_6_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_6_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_6_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_7_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_7_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_7_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_7_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_7_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_7_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_7_CFG_LL_LOW Low level output
  * @return IO_GPIO_7_CFG_LL_HIGH 
  */
-#define io_get_gpio_7_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_LL_FIELD_MASK )
+#define io_get_gpio_7_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_7_CFG register 
  * @param dev ptr to opex device
@@ -1055,21 +417,21 @@
  * @return IO_GPIO_7_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_7_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_7_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_7_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_8_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_8_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_8_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_8_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_8_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_8_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_8_CFG_LL_LOW Low level output
  * @return IO_GPIO_8_CFG_LL_HIGH 
  */
-#define io_get_gpio_8_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_LL_FIELD_MASK )
+#define io_get_gpio_8_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_8_CFG register 
  * @param dev ptr to opex device
@@ -1078,21 +440,21 @@
  * @return IO_GPIO_8_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_8_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_8_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_8_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_9_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_9_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_9_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_9_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_9_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_9_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_9_CFG_LL_LOW Low level output
  * @return IO_GPIO_9_CFG_LL_HIGH 
  */
-#define io_get_gpio_9_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_LL_FIELD_MASK )
+#define io_get_gpio_9_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_9_CFG register 
  * @param dev ptr to opex device
@@ -1101,21 +463,21 @@
  * @return IO_GPIO_9_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_9_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_9_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_9_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_10_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_10_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_10_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_10_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_10_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_10_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_10_CFG_LL_LOW Low level output
  * @return IO_GPIO_10_CFG_LL_HIGH 
  */
-#define io_get_gpio_10_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_LL_FIELD_MASK )
+#define io_get_gpio_10_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_10_CFG register 
  * @param dev ptr to opex device
@@ -1124,21 +486,21 @@
  * @return IO_GPIO_10_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_10_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_10_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_10_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_11_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_11_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_11_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_11_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_11_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_11_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_11_CFG_LL_LOW Low level output
  * @return IO_GPIO_11_CFG_LL_HIGH 
  */
-#define io_get_gpio_11_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_LL_FIELD_MASK )
+#define io_get_gpio_11_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_11_CFG register 
  * @param dev ptr to opex device
@@ -1147,21 +509,21 @@
  * @return IO_GPIO_11_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_11_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_11_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_11_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_12_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_12_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_12_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_12_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_12_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_12_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_12_CFG_LL_LOW Low level output
  * @return IO_GPIO_12_CFG_LL_HIGH 
  */
-#define io_get_gpio_12_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_LL_FIELD_MASK )
+#define io_get_gpio_12_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_12_CFG register 
  * @param dev ptr to opex device
@@ -1170,21 +532,21 @@
  * @return IO_GPIO_12_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_12_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_12_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_12_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_13_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_13_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_13_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_13_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_13_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_13_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_13_CFG_LL_LOW Low level output
  * @return IO_GPIO_13_CFG_LL_HIGH 
  */
-#define io_get_gpio_13_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_LL_FIELD_MASK )
+#define io_get_gpio_13_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_13_CFG register 
  * @param dev ptr to opex device
@@ -1193,21 +555,21 @@
  * @return IO_GPIO_13_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_13_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_13_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_13_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_14_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_14_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_14_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_14_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_14_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_14_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_14_CFG_LL_LOW Low level output
  * @return IO_GPIO_14_CFG_LL_HIGH 
  */
-#define io_get_gpio_14_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_LL_FIELD_MASK )
+#define io_get_gpio_14_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_14_CFG register 
  * @param dev ptr to opex device
@@ -1216,21 +578,21 @@
  * @return IO_GPIO_14_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_14_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_14_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_14_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_15_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_15_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_15_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_15_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_15_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_15_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_15_CFG_LL_LOW Low level output
  * @return IO_GPIO_15_CFG_LL_HIGH 
  */
-#define io_get_gpio_15_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_LL_FIELD_MASK )
+#define io_get_gpio_15_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_15_CFG register 
  * @param dev ptr to opex device
@@ -1239,21 +601,21 @@
  * @return IO_GPIO_15_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_15_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_15_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_15_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_16_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_16_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_16_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_16_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_16_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_16_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_16_CFG_LL_LOW Low level output
  * @return IO_GPIO_16_CFG_LL_HIGH 
  */
-#define io_get_gpio_16_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_LL_FIELD_MASK )
+#define io_get_gpio_16_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_16_CFG register 
  * @param dev ptr to opex device
@@ -1262,21 +624,21 @@
  * @return IO_GPIO_16_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_16_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_16_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_16_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_17_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_17_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_17_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_17_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_17_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_17_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_17_CFG_LL_LOW Low level output
  * @return IO_GPIO_17_CFG_LL_HIGH 
  */
-#define io_get_gpio_17_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_LL_FIELD_MASK )
+#define io_get_gpio_17_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_17_CFG register 
  * @param dev ptr to opex device
@@ -1285,21 +647,21 @@
  * @return IO_GPIO_17_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_17_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_17_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_17_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_18_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_18_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_18_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_18_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_18_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_18_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_18_CFG_LL_LOW Low level output
  * @return IO_GPIO_18_CFG_LL_HIGH 
  */
-#define io_get_gpio_18_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_LL_FIELD_MASK )
+#define io_get_gpio_18_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_18_CFG register 
  * @param dev ptr to opex device
@@ -1308,21 +670,21 @@
  * @return IO_GPIO_18_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_18_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_18_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_18_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_19_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_19_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_19_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_19_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_19_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_19_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_19_CFG_LL_LOW Low level output
  * @return IO_GPIO_19_CFG_LL_HIGH 
  */
-#define io_get_gpio_19_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_LL_FIELD_MASK )
+#define io_get_gpio_19_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_19_CFG register 
  * @param dev ptr to opex device
@@ -1331,21 +693,21 @@
  * @return IO_GPIO_19_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_19_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_19_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_19_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_20_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_20_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_20_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_20_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_20_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_20_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_20_CFG_LL_LOW Low level output
  * @return IO_GPIO_20_CFG_LL_HIGH 
  */
-#define io_get_gpio_20_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_LL_FIELD_MASK )
+#define io_get_gpio_20_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_20_CFG register 
  * @param dev ptr to opex device
@@ -1354,21 +716,21 @@
  * @return IO_GPIO_20_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_20_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_20_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_20_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_21_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_21_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_21_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_21_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_21_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_21_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_21_CFG_LL_LOW Low level output
  * @return IO_GPIO_21_CFG_LL_HIGH 
  */
-#define io_get_gpio_21_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_LL_FIELD_MASK )
+#define io_get_gpio_21_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_21_CFG register 
  * @param dev ptr to opex device
@@ -1377,21 +739,21 @@
  * @return IO_GPIO_21_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_21_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_21_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_21_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_22_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_22_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_22_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_22_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_22_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_22_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_22_CFG_LL_LOW Low level output
  * @return IO_GPIO_22_CFG_LL_HIGH 
  */
-#define io_get_gpio_22_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_LL_FIELD_MASK )
+#define io_get_gpio_22_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_22_CFG register 
  * @param dev ptr to opex device
@@ -1400,21 +762,21 @@
  * @return IO_GPIO_22_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_22_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_22_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_22_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_23_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_23_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_23_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_23_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_23_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_23_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_23_CFG_LL_LOW Low level output
  * @return IO_GPIO_23_CFG_LL_HIGH 
  */
-#define io_get_gpio_23_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_LL_FIELD_MASK )
+#define io_get_gpio_23_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_23_CFG register 
  * @param dev ptr to opex device
@@ -1423,21 +785,21 @@
  * @return IO_GPIO_23_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_23_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_23_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_23_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_24_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_24_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_24_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_24_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_24_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_24_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_24_CFG_LL_LOW Low level output
  * @return IO_GPIO_24_CFG_LL_HIGH 
  */
-#define io_get_gpio_24_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_LL_FIELD_MASK )
+#define io_get_gpio_24_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_24_CFG register 
  * @param dev ptr to opex device
@@ -1446,21 +808,21 @@
  * @return IO_GPIO_24_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_24_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_24_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_24_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the DIR field from the GPIO_25_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_25_CFG_DIR_IN GPIO is an input
  * @return IO_GPIO_25_CFG_DIR_OUT GPIO is an output
  */
-#define io_get_gpio_25_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_DIR_FIELD_MASK )
+#define io_get_gpio_25_cfg_dir(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK )
 /**
  * @brief reads the LL field from the GPIO_25_CFG register 
  * @param dev ptr to opex device
  * @return IO_GPIO_25_CFG_LL_LOW Low level output
  * @return IO_GPIO_25_CFG_LL_HIGH 
  */
-#define io_get_gpio_25_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_LL_FIELD_MASK )
+#define io_get_gpio_25_cfg_ll(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the GPIO_25_CFG register 
  * @param dev ptr to opex device
@@ -1469,7 +831,7 @@
  * @return IO_GPIO_25_CFG_IRQ_FALLING Trigger on falling
  * @return IO_GPIO_25_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_gpio_25_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_IRQ_FIELD_MASK )
+#define io_get_gpio_25_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Polarity field from the IRQ_CFG register 
  * @param dev ptr to opex device
@@ -1486,7 +848,7 @@
  * @brief reads the Treshold field from the ADC_0_CFG register 
  * @param dev ptr to opex device
  */
-#define io_get_adc_0_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_0_CFG_TRESHOLD_FIELD_MASK )
+#define io_get_adc_0_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the ADC_0_CFG register 
  * @param dev ptr to opex device
@@ -1495,12 +857,12 @@
  * @return IO_ADC_0_CFG_IRQ_FALLING Trigger on falling
  * @return IO_ADC_0_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_adc_0_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_0_CFG_IRQ_FIELD_MASK )
+#define io_get_adc_0_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Treshold field from the ADC_1_CFG register 
  * @param dev ptr to opex device
  */
-#define io_get_adc_1_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_1_CFG_TRESHOLD_FIELD_MASK )
+#define io_get_adc_1_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the ADC_1_CFG register 
  * @param dev ptr to opex device
@@ -1509,12 +871,12 @@
  * @return IO_ADC_1_CFG_IRQ_FALLING Trigger on falling
  * @return IO_ADC_1_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_adc_1_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_1_CFG_IRQ_FIELD_MASK )
+#define io_get_adc_1_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Treshold field from the ADC_2_CFG register 
  * @param dev ptr to opex device
  */
-#define io_get_adc_2_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_2_CFG_TRESHOLD_FIELD_MASK )
+#define io_get_adc_2_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the ADC_2_CFG register 
  * @param dev ptr to opex device
@@ -1523,12 +885,12 @@
  * @return IO_ADC_2_CFG_IRQ_FALLING Trigger on falling
  * @return IO_ADC_2_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_adc_2_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_2_CFG_IRQ_FIELD_MASK )
+#define io_get_adc_2_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Treshold field from the ADC_3_CFG register 
  * @param dev ptr to opex device
  */
-#define io_get_adc_3_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_3_CFG_TRESHOLD_FIELD_MASK )
+#define io_get_adc_3_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the ADC_3_CFG register 
  * @param dev ptr to opex device
@@ -1537,12 +899,12 @@
  * @return IO_ADC_3_CFG_IRQ_FALLING Trigger on falling
  * @return IO_ADC_3_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_adc_3_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_3_CFG_IRQ_FIELD_MASK )
+#define io_get_adc_3_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Treshold field from the ADC_4_CFG register 
  * @param dev ptr to opex device
  */
-#define io_get_adc_4_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_4_CFG_TRESHOLD_FIELD_MASK )
+#define io_get_adc_4_cfg_treshold(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK )
 /**
  * @brief reads the IRQ field from the ADC_4_CFG register 
  * @param dev ptr to opex device
@@ -1551,7 +913,7 @@
  * @return IO_ADC_4_CFG_IRQ_FALLING Trigger on falling
  * @return IO_ADC_4_CFG_IRQ_ANY Trigger on any
  */
-#define io_get_adc_4_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_4_CFG_IRQ_FIELD_MASK )
+#define io_get_adc_4_cfg_irq(dev) regdev_read_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK )
 /**
  * @brief reads the Period field from the PWM_CONFIG register 
  * @param dev ptr to opex device
@@ -1617,14 +979,14 @@
  * @option IO_GPIO_0_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_0_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_0_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_0_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_0_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_0_CFG_LL_LOW Low level output
  * @option IO_GPIO_0_CFG_LL_HIGH 
  */
-#define io_set_gpio_0_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_0_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_0_CFG register 
  * @param dev ptr to opex device
@@ -1633,21 +995,21 @@
  * @option IO_GPIO_0_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_0_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_0_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_0_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_0_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio0Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_1_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_1_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_1_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_1_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_1_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_1_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_1_CFG_LL_LOW Low level output
  * @option IO_GPIO_1_CFG_LL_HIGH 
  */
-#define io_set_gpio_1_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_1_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_1_CFG register 
  * @param dev ptr to opex device
@@ -1656,21 +1018,21 @@
  * @option IO_GPIO_1_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_1_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_1_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_1_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_1_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio1Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_2_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_2_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_2_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_2_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_2_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_2_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_2_CFG_LL_LOW Low level output
  * @option IO_GPIO_2_CFG_LL_HIGH 
  */
-#define io_set_gpio_2_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_2_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_2_CFG register 
  * @param dev ptr to opex device
@@ -1679,21 +1041,21 @@
  * @option IO_GPIO_2_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_2_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_2_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_2_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_2_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio2Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_3_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_3_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_3_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_3_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_3_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_3_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_3_CFG_LL_LOW Low level output
  * @option IO_GPIO_3_CFG_LL_HIGH 
  */
-#define io_set_gpio_3_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_3_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_3_CFG register 
  * @param dev ptr to opex device
@@ -1702,21 +1064,21 @@
  * @option IO_GPIO_3_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_3_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_3_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_3_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_3_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio3Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_4_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_4_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_4_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_4_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_4_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_4_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_4_CFG_LL_LOW Low level output
  * @option IO_GPIO_4_CFG_LL_HIGH 
  */
-#define io_set_gpio_4_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_4_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_4_CFG register 
  * @param dev ptr to opex device
@@ -1725,21 +1087,21 @@
  * @option IO_GPIO_4_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_4_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_4_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_4_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_4_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio4Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_5_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_5_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_5_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_5_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_5_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_5_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_5_CFG_LL_LOW Low level output
  * @option IO_GPIO_5_CFG_LL_HIGH 
  */
-#define io_set_gpio_5_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_5_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_5_CFG register 
  * @param dev ptr to opex device
@@ -1748,21 +1110,21 @@
  * @option IO_GPIO_5_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_5_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_5_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_5_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_5_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio5Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_6_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_6_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_6_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_6_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_6_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_6_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_6_CFG_LL_LOW Low level output
  * @option IO_GPIO_6_CFG_LL_HIGH 
  */
-#define io_set_gpio_6_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_6_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_6_CFG register 
  * @param dev ptr to opex device
@@ -1771,21 +1133,21 @@
  * @option IO_GPIO_6_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_6_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_6_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_6_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_6_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio6Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_7_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_7_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_7_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_7_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_7_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_7_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_7_CFG_LL_LOW Low level output
  * @option IO_GPIO_7_CFG_LL_HIGH 
  */
-#define io_set_gpio_7_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_7_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_7_CFG register 
  * @param dev ptr to opex device
@@ -1794,21 +1156,21 @@
  * @option IO_GPIO_7_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_7_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_7_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_7_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_7_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio7Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_8_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_8_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_8_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_8_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_8_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_8_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_8_CFG_LL_LOW Low level output
  * @option IO_GPIO_8_CFG_LL_HIGH 
  */
-#define io_set_gpio_8_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_8_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_8_CFG register 
  * @param dev ptr to opex device
@@ -1817,21 +1179,21 @@
  * @option IO_GPIO_8_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_8_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_8_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_8_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_8_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio8Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_9_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_9_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_9_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_9_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_9_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_9_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_9_CFG_LL_LOW Low level output
  * @option IO_GPIO_9_CFG_LL_HIGH 
  */
-#define io_set_gpio_9_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_9_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_9_CFG register 
  * @param dev ptr to opex device
@@ -1840,21 +1202,21 @@
  * @option IO_GPIO_9_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_9_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_9_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_9_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_9_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio9Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_10_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_10_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_10_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_10_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_10_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_10_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_10_CFG_LL_LOW Low level output
  * @option IO_GPIO_10_CFG_LL_HIGH 
  */
-#define io_set_gpio_10_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_10_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_10_CFG register 
  * @param dev ptr to opex device
@@ -1863,21 +1225,21 @@
  * @option IO_GPIO_10_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_10_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_10_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_10_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_10_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio10Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_11_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_11_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_11_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_11_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_11_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_11_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_11_CFG_LL_LOW Low level output
  * @option IO_GPIO_11_CFG_LL_HIGH 
  */
-#define io_set_gpio_11_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_11_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_11_CFG register 
  * @param dev ptr to opex device
@@ -1886,21 +1248,21 @@
  * @option IO_GPIO_11_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_11_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_11_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_11_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_11_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio11Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_12_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_12_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_12_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_12_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_12_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_12_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_12_CFG_LL_LOW Low level output
  * @option IO_GPIO_12_CFG_LL_HIGH 
  */
-#define io_set_gpio_12_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_12_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_12_CFG register 
  * @param dev ptr to opex device
@@ -1909,21 +1271,21 @@
  * @option IO_GPIO_12_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_12_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_12_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_12_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_12_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio12Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_13_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_13_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_13_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_13_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_13_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_13_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_13_CFG_LL_LOW Low level output
  * @option IO_GPIO_13_CFG_LL_HIGH 
  */
-#define io_set_gpio_13_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_13_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_13_CFG register 
  * @param dev ptr to opex device
@@ -1932,21 +1294,21 @@
  * @option IO_GPIO_13_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_13_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_13_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_13_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_13_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio13Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_14_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_14_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_14_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_14_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_14_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_14_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_14_CFG_LL_LOW Low level output
  * @option IO_GPIO_14_CFG_LL_HIGH 
  */
-#define io_set_gpio_14_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_14_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_14_CFG register 
  * @param dev ptr to opex device
@@ -1955,21 +1317,21 @@
  * @option IO_GPIO_14_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_14_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_14_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_14_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_14_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio14Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_15_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_15_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_15_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_15_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_15_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_15_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_15_CFG_LL_LOW Low level output
  * @option IO_GPIO_15_CFG_LL_HIGH 
  */
-#define io_set_gpio_15_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_15_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_15_CFG register 
  * @param dev ptr to opex device
@@ -1978,21 +1340,21 @@
  * @option IO_GPIO_15_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_15_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_15_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_15_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_15_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio15Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_16_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_16_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_16_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_16_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_16_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_16_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_16_CFG_LL_LOW Low level output
  * @option IO_GPIO_16_CFG_LL_HIGH 
  */
-#define io_set_gpio_16_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_16_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_16_CFG register 
  * @param dev ptr to opex device
@@ -2001,21 +1363,21 @@
  * @option IO_GPIO_16_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_16_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_16_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_16_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_16_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio16Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_17_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_17_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_17_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_17_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_17_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_17_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_17_CFG_LL_LOW Low level output
  * @option IO_GPIO_17_CFG_LL_HIGH 
  */
-#define io_set_gpio_17_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_17_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_17_CFG register 
  * @param dev ptr to opex device
@@ -2024,21 +1386,21 @@
  * @option IO_GPIO_17_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_17_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_17_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_17_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_17_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio17Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_18_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_18_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_18_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_18_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_18_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_18_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_18_CFG_LL_LOW Low level output
  * @option IO_GPIO_18_CFG_LL_HIGH 
  */
-#define io_set_gpio_18_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_18_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_18_CFG register 
  * @param dev ptr to opex device
@@ -2047,21 +1409,21 @@
  * @option IO_GPIO_18_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_18_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_18_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_18_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_18_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio18Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_19_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_19_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_19_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_19_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_19_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_19_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_19_CFG_LL_LOW Low level output
  * @option IO_GPIO_19_CFG_LL_HIGH 
  */
-#define io_set_gpio_19_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_19_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_19_CFG register 
  * @param dev ptr to opex device
@@ -2070,21 +1432,21 @@
  * @option IO_GPIO_19_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_19_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_19_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_19_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_19_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio19Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_20_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_20_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_20_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_20_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_20_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_20_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_20_CFG_LL_LOW Low level output
  * @option IO_GPIO_20_CFG_LL_HIGH 
  */
-#define io_set_gpio_20_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_20_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_20_CFG register 
  * @param dev ptr to opex device
@@ -2093,21 +1455,21 @@
  * @option IO_GPIO_20_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_20_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_20_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_20_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_20_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio20Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_21_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_21_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_21_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_21_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_21_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_21_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_21_CFG_LL_LOW Low level output
  * @option IO_GPIO_21_CFG_LL_HIGH 
  */
-#define io_set_gpio_21_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_21_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_21_CFG register 
  * @param dev ptr to opex device
@@ -2116,21 +1478,21 @@
  * @option IO_GPIO_21_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_21_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_21_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_21_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_21_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio21Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_22_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_22_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_22_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_22_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_22_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_22_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_22_CFG_LL_LOW Low level output
  * @option IO_GPIO_22_CFG_LL_HIGH 
  */
-#define io_set_gpio_22_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_22_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_22_CFG register 
  * @param dev ptr to opex device
@@ -2139,21 +1501,21 @@
  * @option IO_GPIO_22_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_22_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_22_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_22_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_22_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio22Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_23_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_23_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_23_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_23_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_23_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_23_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_23_CFG_LL_LOW Low level output
  * @option IO_GPIO_23_CFG_LL_HIGH 
  */
-#define io_set_gpio_23_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_23_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_23_CFG register 
  * @param dev ptr to opex device
@@ -2162,21 +1524,21 @@
  * @option IO_GPIO_23_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_23_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_23_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_23_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_23_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio23Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_24_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_24_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_24_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_24_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_24_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_24_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_24_CFG_LL_LOW Low level output
  * @option IO_GPIO_24_CFG_LL_HIGH 
  */
-#define io_set_gpio_24_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_24_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_24_CFG register 
  * @param dev ptr to opex device
@@ -2185,21 +1547,21 @@
  * @option IO_GPIO_24_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_24_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_24_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_24_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_24_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio24Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the DIR field to the GPIO_25_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_25_CFG_DIR_IN GPIO is an input
  * @option IO_GPIO_25_CFG_DIR_OUT GPIO is an output
  */
-#define io_set_gpio_25_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_DIR_FIELD_MASK , (val) )
+#define io_set_gpio_25_cfg_dir(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_DIR_FIELD_MASK , (val) )
 /**
  * @brief writes the LL field to the GPIO_25_CFG register 
  * @param dev ptr to opex device
  * @option IO_GPIO_25_CFG_LL_LOW Low level output
  * @option IO_GPIO_25_CFG_LL_HIGH 
  */
-#define io_set_gpio_25_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_LL_FIELD_MASK , (val) )
+#define io_set_gpio_25_cfg_ll(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_LL_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the GPIO_25_CFG register 
  * @param dev ptr to opex device
@@ -2208,7 +1570,7 @@
  * @option IO_GPIO_25_CFG_IRQ_FALLING Trigger on falling
  * @option IO_GPIO_25_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_gpio_25_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_25_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_gpio_25_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mGpio25Cfg, IO_GPIO_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Polarity field to the IRQ_CFG register 
  * @param dev ptr to opex device
@@ -2225,7 +1587,7 @@
  * @brief writes the Treshold field to the ADC_0_CFG register 
  * @param dev ptr to opex device
  */
-#define io_set_adc_0_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_0_CFG_TRESHOLD_FIELD_MASK , (val) )
+#define io_set_adc_0_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the ADC_0_CFG register 
  * @param dev ptr to opex device
@@ -2234,12 +1596,12 @@
  * @option IO_ADC_0_CFG_IRQ_FALLING Trigger on falling
  * @option IO_ADC_0_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_adc_0_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_0_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_adc_0_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc0Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Treshold field to the ADC_1_CFG register 
  * @param dev ptr to opex device
  */
-#define io_set_adc_1_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_1_CFG_TRESHOLD_FIELD_MASK , (val) )
+#define io_set_adc_1_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the ADC_1_CFG register 
  * @param dev ptr to opex device
@@ -2248,12 +1610,12 @@
  * @option IO_ADC_1_CFG_IRQ_FALLING Trigger on falling
  * @option IO_ADC_1_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_adc_1_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_1_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_adc_1_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc1Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Treshold field to the ADC_2_CFG register 
  * @param dev ptr to opex device
  */
-#define io_set_adc_2_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_2_CFG_TRESHOLD_FIELD_MASK , (val) )
+#define io_set_adc_2_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the ADC_2_CFG register 
  * @param dev ptr to opex device
@@ -2262,12 +1624,12 @@
  * @option IO_ADC_2_CFG_IRQ_FALLING Trigger on falling
  * @option IO_ADC_2_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_adc_2_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_2_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_adc_2_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc2Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Treshold field to the ADC_3_CFG register 
  * @param dev ptr to opex device
  */
-#define io_set_adc_3_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_3_CFG_TRESHOLD_FIELD_MASK , (val) )
+#define io_set_adc_3_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the ADC_3_CFG register 
  * @param dev ptr to opex device
@@ -2276,12 +1638,12 @@
  * @option IO_ADC_3_CFG_IRQ_FALLING Trigger on falling
  * @option IO_ADC_3_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_adc_3_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_3_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_adc_3_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc3Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Treshold field to the ADC_4_CFG register 
  * @param dev ptr to opex device
  */
-#define io_set_adc_4_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_4_CFG_TRESHOLD_FIELD_MASK , (val) )
+#define io_set_adc_4_cfg_treshold(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_X_CFG_TRESHOLD_FIELD_MASK , (val) )
 /**
  * @brief writes the IRQ field to the ADC_4_CFG register 
  * @param dev ptr to opex device
@@ -2290,7 +1652,7 @@
  * @option IO_ADC_4_CFG_IRQ_FALLING Trigger on falling
  * @option IO_ADC_4_CFG_IRQ_ANY Trigger on any
  */
-#define io_set_adc_4_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_4_CFG_IRQ_FIELD_MASK , (val) )
+#define io_set_adc_4_cfg_irq(dev, val) regdev_write_field(&(dev)->mRegDev, &(dev)->mAdc4Cfg, IO_ADC_X_CFG_IRQ_FIELD_MASK , (val) )
 /**
  * @brief writes the Period field to the PWM_CONFIG register 
  * @param dev ptr to opex device
